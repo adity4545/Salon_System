@@ -1,0 +1,63 @@
+.job-vacancy-application .application {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    rgba(148, 102, 102, 0.4),
+    rgba(124, 58, 58, 0.3)
+  );
+}
+
+.job-vacancy-application form {
+  background-color: rgb(255, 255, 255);
+  padding: 30px 68px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 100px;
+}
+
+.job-vacancy-application h1 {
+  color: rgb(77,1,77);
+  text-align: left;
+}
+
+.job-vacancy-application .sub, .job-vacancy-application .back {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
+
+.job-vacancy-application .sub {
+  background-color: rgb(94, 48, 141);
+  color: rgb(255, 255, 255);
+}
+.sub:hover{
+  background-color: rgb(66, 30, 83);
+}
+.back:hover{
+  background-color: rgb(66, 30, 83);
+}
+.job-vacancy-application .back {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.job-vacancy-application .photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+}
+
+.job-vacancy-application .aa {
+  color: rgb(255, 255, 255);
+}

@@ -1,0 +1,86 @@
+.edit-product {
+    margin-bottom: 5rem;
+    border: 3px solid black;
+    .card {
+      width: 100%;
+      max-width: 600px;
+      padding: 1rem;
+      background-color: #F7C8BB;
+  
+      .error-message {
+        color: red;
+        font-weight: bold;
+        font-size: 10px; /* Increased font size for error message */
+        margin-top: 5px; /* Add space above error message */
+      }
+      input:invalid {
+        border-color: red;
+      }
+    
+      input:valid {
+        border-color: green;
+      }
+    }
+  
+    form {
+      label {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--color-dark);
+        // border: 1px solid black;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="file"],
+      input[type="email"],
+      select,
+      input[type="password"] {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 300;
+        padding: 1rem;
+        margin: 1rem auto;
+        width: 100%;
+        border: 1px solid white;
+        border-radius: 3px;
+        outline: none;
+  
+        &:valid {
+          border-color: green;
+        }
+  
+        &:invalid {
+          border-color: red;
+        }
+      }
+    }
+  }
+  
+  .group {
+    border: 1px solid var(--dark-blue);
+    padding: 5px;
+  }
+  
+  .image-preview {
+    width: 100%;
+    max-height: 280px;
+    padding: 1rem;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+  }
+
+  .image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure the image fits within its container */
+  }
+  
+  .image-show {
+    display: block;
+  }
+  

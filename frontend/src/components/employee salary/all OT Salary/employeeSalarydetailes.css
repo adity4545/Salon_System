@@ -1,0 +1,126 @@
+body {
+    background-color: #f3b1be;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.employee-salary-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3b1be;
+    padding: 2rem;
+}
+
+.employee-salary-profile-card-container {
+    width: 100%;
+    max-width: 1200px;  /* Increased max-width */
+    margin: auto;
+}
+
+.employee-salary-profile-card {
+    border-radius: 20px;  /* Increased border-radius */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);  /* Increased box-shadow */
+    border: none;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.employee-salary-profile-card-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.employee-salary-profile-side {
+    background: linear-gradient(to bottom right, #ee5a6f, #f29263);
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;  /* Increased padding */
+}
+
+.employee-salary-profile-main {
+    width: 60%;
+    padding: 4rem;  /* Increased padding */
+}
+
+.employee-salary-profile-block {
+    text-align: center;
+}
+
+.employee-salary-profile-img-wrapper {
+    margin-bottom: 30px;
+}
+
+.employee-salary-profile-img {
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 150px;  /* Increased image size */
+    height: 150px;  /* Increased image size */
+}
+
+.employee-salary-profile-name {
+    font-size: 2.5rem;  /* Increased font-size */
+    font-weight: bold;
+    margin-bottom: 1.5rem;  /* Increased margin */
+}
+
+.employee-salary-profile-position {
+    font-size: 1.5rem;  /* Increased font-size */
+    margin-bottom: 1.5rem;  /* Increased margin */
+}
+
+.employee-salary-profile-edit-icon {
+    font-size: 2rem;  /* Increased font-size */
+    margin-top: 2rem;  /* Increased margin */
+    cursor: pointer;
+}
+
+.employee-salary-profile-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.employee-salary-profile-col {
+    width: 48%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.employee-salary-profile-label {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;  /* Increased font-size */
+}
+
+.employee-salary-profile-info {
+    color: #555555;
+    font-size: 1.5rem;  /* Increased font-size */
+}
+
+.employee-salary-profile-social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.employee-salary-profile-social-links li {
+    margin-right: 1.5rem;
+}
+
+.employee-salary-profile-social-links li a {
+    font-size: 2rem;  /* Increased font-size */
+    color: #555555;
+    transition: color 0.3s ease;
+}
+
+.employee-salary-profile-social-links li a:hover {
+    color: #ee5a6f;
+}

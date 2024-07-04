@@ -1,0 +1,61 @@
+.job-vacancy-display .custom-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 350px; /* Set the height of each card */
+  width: 100%; /* Set the width of each card to be responsive */
+  max-width: 500px; /* Increase the max-width for the cards */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: #edb69b52;
+  margin: 20px; /* Add margin to create space between cards */
+}
+
+.job-vacancy-display .photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 70vh; /* Ensure the background covers the whole viewport height */
+}
+
+.job-vacancy-display .card-body {
+  flex-grow: 1; /* Allow the card body to grow to fill the available space */
+  padding: 30px; /* Add padding for better spacing and appearance */
+}
+
+.job-vacancy-display .mm {
+  padding: 7px;
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  border: none;
+  background-color: rgba(44, 20, 45, 0.516);
+  color: white;
+}
+.mm:hover{
+  background-color: rgb(58, 44, 19);
+}
+
+.job-vacancy-display h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 35px;
+  color: #2e1703ac;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.job-vacancy-display .our {
+  color: #2d143a;
+}
+.job-vacancy-display .card-title {
+  font-size: 22px; /* Increase the font size */
+  font-weight: bold; /* Make the text bold */
+}
+.job-vacancy-display .card-text strong {
+  font-size: 13px; /* Increase the font size for strong elements */
+  font-weight: bold; /* Ensure the text is bold */
+}
+
+

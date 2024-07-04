@@ -1,0 +1,38 @@
+.sbox1 {
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #E49E8B;
+    border: 2px solid #ced4da; 
+    border-radius: 20px;
+}
+  
+.sbox1 h2{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+  
+.sbox1 table{
+    margin-top: 20px;
+}
+
+.sbox1 .form-control {
+    width: 400px; 
+}
+
+.sbox2{
+    margin-Left: 20px;
+    margin-Right: 20px;
+}
+
+.sbox2 label {
+    font-size: 18px; 
+    color: black;
+}
+
+.sbox2 button {
+    margin-top: 5px;
+    font-size: 15px;
+    padding: 10px 20px;
+}

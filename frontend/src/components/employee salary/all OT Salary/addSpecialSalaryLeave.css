@@ -1,0 +1,81 @@
+/* addSpecialSalaryLeave.css */
+
+.addspecialsalaryleave-container {
+    max-width: 1000px; /* Increase the max-width for a wider container */
+    margin: 0 auto;
+    padding: 70px; /* Adjust padding for more compact spacing */
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align content */
+}
+
+.addspecialsalaryleave-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.addspecialsalaryleave-form .form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column; /* Ensure labels and inputs stack vertically */
+    align-items: flex-start; /* Align items to the start */
+}
+
+.addspecialsalaryleave-form label {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+.addspecialsalaryleave-form input[type="text"],
+.addspecialsalaryleave-form input[type="email"] {
+    width: 100%; /* Make input fields span the full width of the container */
+    max-width: 950px; /* Limit the maximum width of the input fields */
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.addspecialsalaryleave-form input[type="text"]:focus,
+.addspecialsalaryleave-form input[type="email"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.addspecialsalaryleave-form .btn-primary {
+    width: 100%; /* Make the button span the full width */
+    max-width: 950px; /* Limit the maximum width of the button */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    display: inline-block; /* Center the button */
+}
+
+.addspecialsalaryleave-form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.addspecialsalaryleave-form .text-danger {
+    color: #dc3545;
+    font-size: 14px;
+}
+
+/* Styling for the "Go Back All OT Salary" button */
+.addspecialsalaryleave-container .btn-info {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 15px; /* Add some margin for better spacing */
+}

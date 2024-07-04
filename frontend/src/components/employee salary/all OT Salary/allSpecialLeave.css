@@ -1,0 +1,103 @@
+/* General Styles */
+
+  
+  /* Special Salary Component Styles */
+  .special-table-container {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ecbbbb;
+  }
+  
+  .special-search-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+  }
+  
+  .special-search-input {
+    width: 500px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    font-size: 20px;
+  }
+  
+  .special-search-icon {
+    margin-right: 15px;
+    color: #666;
+  }
+  
+  .special-microphone-icon {
+    margin-left: 15px;
+    color: #666;
+  }
+  
+  .special-add-button {
+    margin-bottom: 30px;
+    padding: 5px 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .special-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .special-table-header {
+    background-color: #af8a79;
+    color: white;
+    text-align: left;
+    padding: 1px;
+    font-size: 8px;
+    font-weight: 600;
+  }
+  
+  .special-table td, .special-table th {
+    font-size: 15px;
+    padding: 15px;
+  }
+  
+  .special-table-row:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .special-table-row:hover {
+    background-color: #ddd;
+    transition: background-color 0.3s ease;
+  }
+  
+  .special-action-button {
+    padding: 8px 10px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .special-action-button.update {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .special-action-button.delete {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .special-action-button.view {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .special-action-button:hover {
+    filter: brightness(1.2);
+  }
+  

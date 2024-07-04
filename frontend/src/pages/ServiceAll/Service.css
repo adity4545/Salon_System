@@ -1,0 +1,58 @@
+.box{
+    margin-top: 30px;
+    margin-left: -300px;
+    margin-right: -300px;
+    background-color: #E49E8B;
+    border: 2px solid #ced4da; 
+    border-radius: 20px;
+}
+
+.box h2{
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.box input{
+    font-size: 15px;
+}
+
+.box table{
+    font-size: 16px;
+    text-align: center;
+}
+
+.sbox3{
+    margin-Left: 20px;
+    margin-Right: 20px;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    color: black;
+    font-weight: bold;
+    
+}
+
+
+
+.btn-primary {
+    display: block;
+    margin: 0 auto;
+}
+  
+
+.btn-success:hover {
+    background-color: #0b6806;
+}
+
+.btn-warning:hover {
+    background-color: #eda010;
+}
+
+.btn-danger:hover {
+    background-color: #b90909;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

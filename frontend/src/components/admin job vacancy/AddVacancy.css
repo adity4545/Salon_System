@@ -1,0 +1,130 @@
+.btn{
+  border: none;
+  padding: 7px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+.btn-add{
+  background:#31414d;;
+  color: rgb(27, 23, 23);
+  font-weight: bold;
+  margin-top: 10px;
+}
+.btn:hover{
+  background-color: #654035;
+}
+
+.addContainer{
+  position: absolute;
+  background-color: rgba(0,0,0,0.2);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addContainer form{
+  width: 420px;
+  background-color:#F7C8BB;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 40px;
+  box-shadow:5px 5px 5px rgba(182, 150, 150, 0.2);
+  border-radius: 5px;
+
+}
+
+.addContainer form label{
+  font-size: 18px;
+  color: rgb(91, 61, 61);
+}
+.addContainer form input{
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 10px;
+    
+}
+.addContainer for textarea{
+  font-size: 18px;
+  padding: 5px;
+  margin-bottom: 10px;
+  
+}
+.addContainer form button{
+  background-color:#342723;
+  color:#ddcfcf;
+  font-weight: 500;
+  margin-top: 30px;
+} 
+
+.addContainer form .close-btn{
+
+  margin-left: auto;
+  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid  rgb(51, 17, 53);
+ cursor: pointer;
+ background-color: rgb(139, 86, 86);
+
+}
+
+.tablecontainer{
+  margin-top: 30px;
+  
+}
+.addContainer table{
+box-shadow: 5px 5px 10px rgba(141, 55, 55, 0.2);
+}
+.tablecontainer table thead tr{
+   background-color: #60ade8;
+   
+
+}
+
+.tablecontainer  table thead tr th,
+.tablecontainer  table tBODY tr td
+{
+
+     min-width: 200px;
+     border: 3px solid rgb(238, 237, 245);
+   
+     padding: 7px;
+     text-align: center;
+      
+
+}
+.tablecontainer table tbody td {
+  border-bottom: 1px solid rgb(16, 1, 1);
+}
+
+.btn-edit,
+.btn-delete{
+ font-size:  16px;
+ padding: 5px 10px;
+ margin: 0px 5px;
+}
+.btn-edit{
+background-color: rgb(73, 94, 127) ;
+}
+.btn-delete{
+background-color: #262020;
+color: white;
+}
+.addContainer input,
+.addContainer textarea {
+color: rgb(2, 2, 2); /* Change placeholder color to red */
+background-color: #debab0;
+border-color: black;
+font-size: 18px;
+
+}

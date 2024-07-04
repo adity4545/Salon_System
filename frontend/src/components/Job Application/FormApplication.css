@@ -1,0 +1,89 @@
+.job-application-form {
+  /* Updated class name */
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+.job-application-form label {
+  /* Input field labels */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+.job-application-form input {
+  /* Updated class name */
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid #ff1818; /* Updated border color */
+}
+
+.job-application-form span {
+  /* Updated class name */
+  font-size: 12px;
+  padding: 3px;
+  color: rgb(175, 77, 77);
+  display: none;
+}
+
+.job-application-form input:invalid ~ span {
+  /* Updated class name */
+  display: block;
+}
+
+.job-application-form select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #000000; /* Default border color */
+  border-radius: 5px;
+  margin-top: 10px;
+  border-color: #000000; /* Border color for input fields */
+}
+.job-application-form input {
+  /* Updated class name */
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #140000;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.job-application-form select {
+  /* Updated class name */
+  appearance: none; /* Remove default styling for select element */
+  background-color: #ffffff; /* Background color */
+}
+
+.job-application-form select:focus,
+.job-application-form input:focus {
+  /* Updated class name */
+  outline: none;
+  border-color: #010a05; /* Border color when focused */
+}
+.job-application-form select[name="position"] {
+  border-color: #000000; /* Border color for Job Position select */
+}
+
+/* Override border color for Upload Your CV input */
+.job-application-form input[name="uploadfile"] {
+  border-color: #000000; /* Border color for Upload Your CV input */
+}
+.job-application-form input[name="name"] {
+  border-color: #000000; /* Border color for Upload Your CV input */
+}
+.job-application-form input[name="email"] {
+  border-color: #000000; /* Border color for Upload Your CV input */
+}
+.job-application-form input[name="address"] {
+  border-color: #000000; /* Border color for Upload Your CV input */
+}
+.job-application-form input[name="mobile"] {
+  border-color: #000000; /* Border color for Upload Your CV input */
+}
+.job-application-form input[name="age"] {
+  border-color: #000000; /* Border color for Upload Your CV input */
+}
+.job-application-form input[name="gender"] {
+  border-color: #000000; /* Border color for Upload Your CV input */
+}

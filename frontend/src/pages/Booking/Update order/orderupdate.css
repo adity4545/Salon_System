@@ -1,0 +1,72 @@
+.booking-update {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10%;
+  }
+  
+  .booking-update label {
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .booking-update input[type="text"],
+  .booking-update input[type="date"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .booking-update button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .booking-update button:hover {
+    background-color: #a05d89;
+  }
+  
+  .order-update input{
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .order-update  #service{
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .order-update {
+    margin: 0px auto;
+    display: flex;
+    max-width: 1100px;
+    background-color: #feb9bbd9;
+    flex-direction: column;
+    padding: 20px;
+
+  }
+  .order-update  button {
+    padding: 10px 30px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .order-update  button:hover{
+    background-color: #a05d89;
+  }
