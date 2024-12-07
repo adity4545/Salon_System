@@ -5,6 +5,7 @@ Technologies Used
 We utilized the MERN Stack technology for the development of this system:
 
 MongoDB: For database management.
+
 Express.js: For building the back-end API.
 React.js: For creating a dynamic front-end interface.
 Node.js: For server-side programming.
