@@ -37,3 +37,6 @@ This project was created to provide a comprehensive solution for managing salon 
 
 ## All Application
 ![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AllApplications.png)
+
+## Add Vacancy
+![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AdminAddVacancypage.png)
