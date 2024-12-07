@@ -24,10 +24,10 @@ The system consists of the following core modules:
 This project was created to provide a comprehensive solution for managing salon operations effectively, while showcasing our skills in the MERN stack. 
 
 ## Login page
-![image alert](https://github.com/SandaruwanChandrasena/ITP-Salon-Management-System/blob/2a31bad76c566440eecd413cd936cb835a0a94db/Login%20Page.png)
+![image alert]()
 
 ## Dash Board
-![image alert](https://github.com/SandaruwanChandrasena/ITP-Salon-Management-System/blob/50975272fc2668c73fa992d6e6f7868b5f5e0ac0/DashBoard.png)
+![image alert]()
 
 ## Salon Items
-![image alert](https://github.com/SandaruwanChandrasena/ITP-Salon-Management-System/blob/8771be5d4ee30911ce2995e876a4b8fdb0b46cbd/Salon%20Items.png)
+![image alert]()
