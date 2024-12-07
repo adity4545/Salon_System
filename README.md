@@ -24,10 +24,16 @@ The system consists of the following core modules:
 This project was created to provide a comprehensive solution for managing salon operations effectively, while showcasing our skills in the MERN stack. 
 
 ## Login page
-![image alert]()
+![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/Loginpage.png)
 
-## Dash Board
-![image alert]()
+## All Vacancies
+![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/Vacanciespage.png)
 
-## Salon Items
-![image alert]()
+## Job Application
+![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/JobApplication.png)
+
+## Admin Add Vacancy
+![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AdminAddVacancypage1.png)
+
+## All Application
+![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AllApplications.png)
