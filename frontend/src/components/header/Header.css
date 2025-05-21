@@ -107,4 +107,22 @@
   border: 0;
   height: 1px;
   background: #444;
+}
+
+@media (min-width: 1024px) {
+  .salon-header__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+  .salon-header {
+    padding: 3rem 0 2.5rem 0;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .salon-header__content {
+    padding: 0 1.5rem;
+  }
 } 

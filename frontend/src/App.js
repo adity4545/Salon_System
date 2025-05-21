@@ -33,6 +33,7 @@ import Contact from "./pages/contact/Contact";
 import Home from "./pages/Home/Home";
 import ServiceAdd from "./pages/serviceadd/ServiceAdd";
 import ServicesAll from "./pages/ServiceAll/ServicesAll";
+import Services from "./pages/Services/Services";
 import { selectUser, setLogin } from "./redux/features/auth/authSlice";
 axios.defaults.withCredentials = true;
 
@@ -156,6 +157,7 @@ function App() {
           }
         />
         <Route path="/home" element={<Home />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/google-success" element={<GoogleSuccess />} />
         <Route
           path="/dashboard"

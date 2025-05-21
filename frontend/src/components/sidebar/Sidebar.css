@@ -47,6 +47,7 @@
 }
 .toggle-button:hover {
   background: #e0aaff;
+  transform: translateY(-2px) scale(1.04);
 }
 
 .menu {
@@ -74,11 +75,12 @@
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(185, 131, 255, 0.10);
   transition: background 0.2s, color 0.2s, transform 0.1s;
+  transform: translateY(-1px) scale(0.95);
 }
 .logout-button:hover {
   background: linear-gradient(90deg, #00bfae 0%, #ffd700 100%);
-  color: #b983ff;
-  transform: translateY(-2px) scale(1.04);
+  color: #fff;
+  transform: translateY(-1px) scale(0.98);
 }
 
 .top_section {
@@ -282,6 +284,7 @@ a {
 }
 .sidebar-btn-logout:hover {
   background: #dc2626;
+  transform: translateY(-2px) scale(1.04);
 }
 
 .main-minimal {
@@ -293,12 +296,32 @@ a {
   transition: margin-left 0.3s;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 270px;
+    transform: translateX(0) !important;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+  }
+  .main-content {
+    margin-left: 270px;
+    padding: 2rem 3rem;
+    max-width: 1200px;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 701px) {
   .sidebar {
     width: 80px;
   }
   .main-content {
     margin-left: 80px;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -310,7 +333,6 @@ a {
     height: 100vh;
     width: 220px;
     transform: translateX(-100%);
-    box-shadow: 2px 0 12px rgba(185, 131, 255, 0.10);
     z-index: 300;
   }
   .sidebar.open {

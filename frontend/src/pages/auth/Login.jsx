@@ -40,6 +40,9 @@ const Login = () => {
             <input type={showPassword ? 'text' : 'password'} className="login-input" value={password} onChange={e => setPassword(e.target.value)} autoComplete="current-password" required placeholder="Password" />
             <button type="button" className="show-hide-btn" onClick={() => setShowPassword(!showPassword)}>{showPassword ? 'Hide' : 'Show'}</button>
           </div>
+          <div style={{ textAlign: 'right', width: '100%', marginBottom: '10px' }}>
+            <Link to="/forgot" className="forgot-link">Forgot Password?</Link>
+          </div>
           <button type="submit" className="login-btn">Login</button>
           <div className="login-divider">or login with</div>
           <a href="http://localhost:5000/api/users/google" className="login-google-btn">

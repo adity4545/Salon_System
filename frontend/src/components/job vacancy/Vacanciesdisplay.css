@@ -36,6 +36,7 @@
 }
 .mm:hover{
   background-color: rgb(58, 44, 19);
+  transform: translateY(-2px) scale(1.04);
 }
 
 .job-vacancy-display h1 {
@@ -56,6 +57,34 @@
 .job-vacancy-display .card-text strong {
   font-size: 13px; /* Increase the font size for strong elements */
   font-weight: bold; /* Ensure the text is bold */
+}
+
+/* Remove all responsive and grid styles */
+.job-vacancy-display {
+  /* No grid or flex container styles */
+}
+
+@media (min-width: 1024px) {
+  .job-vacancy-display .custom-card {
+    max-width: 500px;
+    margin: 24px auto;
+  }
+}
+@media (max-width: 1023px) and (min-width: 701px) {
+  .job-vacancy-display .custom-card {
+    max-width: 400px;
+    margin: 18px auto;
+  }
+}
+@media (max-width: 700px) {
+  .job-vacancy-display .custom-card {
+    max-width: 98vw;
+    margin: 10px 1vw;
+    padding: 12px 4px;
+  }
+  .job-vacancy-display .card-body {
+    padding: 16px 4px;
+  }
 }
 
 

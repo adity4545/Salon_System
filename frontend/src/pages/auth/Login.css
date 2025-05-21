@@ -63,7 +63,7 @@
   position: absolute;
   right: 1.2rem;
   top: 50%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   background: linear-gradient(90deg, #a259e6 0%, #7c3aed 100%);
   color: #fff;
   border: none;
@@ -72,6 +72,10 @@
   padding: 0.3rem 1.2rem;
   cursor: pointer;
   z-index: 3;
+}
+
+.show-hide-btn:hover {
+  background: linear-gradient(90deg, #7c3aed 0%, #a259e6 100%);
 }
 
 .login-btn {
@@ -91,6 +95,7 @@
 }
 .login-btn:hover {
   background: linear-gradient(90deg, #7c3aed 0%, #a259e6 100%);
+  transform: translateY(-2px) scale(1.04);
 }
 
 .login-divider {
@@ -118,6 +123,7 @@
 }
 .login-google-btn:hover {
   background: #c23321;
+  transform: translateY(-2px) scale(1.04);
 }
 
 .login-register-link {

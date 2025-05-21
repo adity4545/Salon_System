@@ -51,7 +51,7 @@ const Home = () => {
             <Link to="/home">Salon<span>System</span></Link>
           </div>
           <ul className="home-nav">
-            <li><Link to="/home">Service</Link></li>
+            <li><Link to="/Services">Service</Link></li>
             <li><Link to="/createBooking">Booking</Link></li>
             <li><Link to="/az">Vacancy</Link></li>
             <li><Link to="/contact-us">Contact</Link></li>
@@ -63,12 +63,24 @@ const Home = () => {
           </ul>
         </div>
       </nav>
+      <div className="about-section">
+        <h2 className="about-title">About Our Salon</h2>
+        <p className="about-description">
+          Welcome to <b>Salon System</b>, your destination for beauty, relaxation, and rejuvenation. With over a decade of experience, our talented team of stylists and therapists are dedicated to providing you with the highest quality of service in a warm and inviting atmosphere. We offer a wide range of hair, skin, and spa treatments using premium products and the latest techniques. Whether you're here for a quick trim, a luxurious facial, or a complete makeover, we ensure every visit leaves you feeling pampered and confident. Discover why thousands of happy clients trust us for their beauty needs—your blissful experience starts here!
+        </p>
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <button className="view-all-btn" onClick={() => navigate('/createBooking')}>Book Now</button>
+      </div>
       <div className="services-section">
         <h2 className="services-title">Our Popular Services</h2>
         <div className="services-list">
-          {services.map(service => (
+          {services.slice(0, 4).map(service => (
             <ServiceCard key={service._id} service={service} />
           ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <button className="view-all-btn" onClick={() => navigate('/services')}>View All Services</button>
         </div>
       </div>
       <Footer />

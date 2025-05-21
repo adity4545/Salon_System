@@ -116,7 +116,7 @@ function AddBooking() {
             <Link to="/home">Salon<span>System</span></Link>
           </div>
           <ul className="home-nav">
-            <li><Link to="/home">Service</Link></li>
+            <li><Link to="/Services">Service</Link></li>
             <li><Link to="/createBooking">Booking</Link></li>
             <li><Link to="/az">Vacancy</Link></li>
             <li><Link to="/contact-us">Contact</Link></li>
@@ -166,6 +166,9 @@ function AddBooking() {
             <PayPalScriptProvider options={{ 'client-id': 'Aa3sMHzBi8qhpJKGa7HUreJLMrGW7CjxqcGPZBcISgfccSnksDP7mmMJrj2uu0bFG2msENVwCD6NahuV', currency: 'USD' }}>
               <div className="paymentSection">
                 <h3>Proceed to Payment</h3>
+                <div style={{ margin: '18px 0', textAlign: 'center' }}>
+                  <PayAtStoreButton />
+                </div>
                 <PaymentComponent amount={paymentAmount} currency="USD" />
                 {!window.paypal && <div style={{color: 'red', marginTop: '12px'}}>PayPal failed to load. Please check your network or client ID.</div>}
               </div>
@@ -175,6 +178,18 @@ function AddBooking() {
       </Card>
     </div>
     </>
+  );
+}
+
+function PayAtStoreButton() {
+  const [confirmed, setConfirmed] = useState(false);
+  if (confirmed) {
+    return <div style={{ color: 'green', fontWeight: 600, marginTop: 12 }}>You have chosen to pay at the store. Please pay at the counter on your visit!</div>;
+  }
+  return (
+    <button className="bookButton" style={{ background: '#ffd700', color: '#2d1e4a', padding: '15px',fontSize: '1.2rem',borderRadius: '6px'}} onClick={() => setConfirmed(true)}>
+      Pay at Store
+    </button>
   );
 }
 

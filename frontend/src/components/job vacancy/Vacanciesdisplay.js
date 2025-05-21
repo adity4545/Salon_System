@@ -50,7 +50,7 @@ const Vacanciesdisplay = () => {
             <Link to="/home">Salon<span>System</span></Link>
           </div>
           <ul className="home-nav">
-            <li><Link to="/home">Service</Link></li>
+            <li><Link to="/Services">Service</Link></li>
             <li><Link to="/createBooking">Booking</Link></li>
             <li><Link to="/az">Vacancy</Link></li>
             <li><Link to="/contact-us">Contact</Link></li>

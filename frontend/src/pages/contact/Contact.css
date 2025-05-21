@@ -114,12 +114,42 @@
   font-size: 1.1rem;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 1024px) {
+  .contactWrapper {
+    max-width: 1200px;
+    padding: 0 40px;
+  }
+  .contactSection {
+    flex-direction: row;
+    gap: 60px;
+  }
+  .contactCard, .infoCard {
+    padding: 48px 40px;
+  }
+}
+@media (max-width: 1023px) and (min-width: 701px) {
+  .contactWrapper {
+    max-width: 900px;
+    padding: 0 16px;
+  }
   .contactSection {
     flex-direction: column;
-    gap: 28px;
+    gap: 32px;
   }
-  .details, .contactForm {
-    min-width: 0;
+  .contactCard, .infoCard {
+    padding: 32px 18px;
+  }
+}
+@media (max-width: 700px) {
+  .contactWrapper {
+    max-width: 99vw;
+    padding: 0 4px;
+  }
+  .contactSection {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .contactCard, .infoCard {
+    padding: 16px 4px;
   }
 } 

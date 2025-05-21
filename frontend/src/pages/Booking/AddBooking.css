@@ -66,6 +66,7 @@
 }
 .bookButton:hover {
   background: #218838;
+  transform: translateY(-2px) scale(1.04);
 }
 
 .paymentCard {
@@ -82,7 +83,29 @@
   margin-bottom: 18px;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1024px) {
+  .addBookingWrapper {
+    max-width: 900px;
+    padding: 0 32px;
+  }
+  .addBookingCard {
+    padding: 48px 40px;
+  }
+}
+@media (max-width: 1023px) and (min-width: 701px) {
+  .addBookingWrapper {
+    max-width: 700px;
+    padding: 0 16px;
+  }
+  .addBookingCard {
+    padding: 32px 18px;
+  }
+}
+@media (max-width: 700px) {
+  .addBookingWrapper {
+    max-width: 99vw;
+    padding: 0 4px;
+  }
   .addBookingCard {
     padding: 16px 4px;
   }

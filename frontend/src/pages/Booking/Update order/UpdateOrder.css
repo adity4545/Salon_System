@@ -59,6 +59,7 @@
 }
 .updateButton:hover {
   background: #218838;
+  transform: translateY(-2px) scale(1.04);
 }
 
 @media (max-width: 600px) {

@@ -104,7 +104,7 @@ button, .btn, .--btn {
 button:hover, .btn:hover, .--btn:hover {
   background: linear-gradient(90deg, #00bfae 0%, #b983ff 100%);
   color: #ffd700;
-  transform: translateY(-2px) scale(1.04);
+  /* transform: translateY(-2px) scale(1.04); */
 }
 
 /* Special button variants */
