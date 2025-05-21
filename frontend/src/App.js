@@ -31,7 +31,7 @@ import OrderDetails from "./pages/Booking/Order details/orderdetails";
 import UpdateOrder from "./pages/Booking/Update order/UpdateOrders";
 import Contact from "./pages/contact/Contact";
 import Home from "./pages/Home/Home";
-import ServiceAdd from "./pages/serviceadd/ServiceAdd";
+import ServiceAdd from "./pages/ServiceAdd/ServiceAdd";
 import ServicesAll from "./pages/ServiceAll/ServicesAll";
 import Services from "./pages/Services/Services";
 import { selectUser, setLogin } from "./redux/features/auth/authSlice";
