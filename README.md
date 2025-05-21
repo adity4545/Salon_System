@@ -1,42 +1,53 @@
-# ITP - Salon Management System  
+# Salon Management System
 
-This project is a **Salon Management System**, developed as a group project during the second semester of the second year at university.  
+A full-featured web application for managing salon operations, including service listings, online bookings, employee management, job vacancies, and more.
 
-## Technologies Used  
+## Features
+- User registration and authentication
+- Service management (add, update, delete, view)
+- Online booking system with PayPal payment integration
+- Employee salary and attendance management
+- Job vacancy posting and application management
+- Admin dashboard and protected routes
+- Responsive, modern UI
 
-We utilized the **MERN Stack** technology for the development of this system:  
-- **MongoDB**: For database management.  
-- **Express.js**: For building the back-end API.  
-- **React.js**: For creating a dynamic front-end interface.  
-- **Node.js**: For server-side programming.  
+## Technologies Used
+- **Frontend:** React, Redux, React Router, Bootstrap, PayPal SDK
+- **Backend:** Node.js, Express, MongoDB, Mongoose
+- **Authentication:** JWT, Passport.js
+- **Payment:** PayPal
 
-## Main Features  
+## Setup Instructions
 
-The system consists of the following core modules:  
-- **Inventory Management System**: Track and manage salon inventory efficiently.  
-- **Service Management System**: Manage the salon's services and their availability.  
-- **Leave Management System**: Handle staff leave requests and approvals.  
-- **Salary Management System**: Process and manage employee salaries.  
-- **Job Vacancy Management System**: Manage job postings and applications for salon vacancies.  
+### Prerequisites
+- Node.js and npm installed
+- MongoDB installed and running
 
-## Purpose  
+### Backend Setup
+```sh
+cd backend
+npm install
+# Create a .env file with your MongoDB URI and other secrets
+npm run dev
+```
 
-This project was created to provide a comprehensive solution for managing salon operations effectively, while showcasing our skills in the MERN stack. 
+### Frontend Setup
+```sh
+cd frontend
+npm install
+npm start
+```
 
-## Login page
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/Loginpage.png)
+### Environment Variables
+- Configure your MongoDB URI and PayPal Client ID in the respective `.env` files.
 
-## All Vacancies
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/Vacanciespage.png)
+## Usage
+- Visit `http://localhost:3000` for the frontend.
+- Admin and user roles are supported.
+- Book services, manage employees, and handle job applications all in one place.
 
-## Job Application
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/JobApplication.png)
+## Contact
+For questions or support, contact [adityakakkad227@gmail.com](mailto:adityakakkad227@gmail.com)
 
-## Admin Add Vacancy
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AdminAddVacancypage1.png)
-
-## All Application
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AllApplications.png)
-
-## Add Vacancy
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AdminAddVacancypage.png)
+---
+**Enjoy managing your salon with ease!** 
