@@ -1,0 +1,6 @@
+{
+  "build": {
+    "command": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend"
+  },
+  "start": "node backend/index.js"
+}
