@@ -1,70 +1,174 @@
 .showorders {
-    max-width: 1100px;
-    margin: 0 auto;
-    margin-top: 10%;
-  }
-  
-  .showorders table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .showorders th,
-  .showorders td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  .searchbtn{
-    margin-bottom: 30px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .showorders th {
-    background-color: #f2f2f2;
-  }
-  
-  .showorders tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .showorders tbody tr:hover {
-    background-color: #f2f2f2;
-  }
-  
-  .showorders a {
-    text-decoration: none;
-    color: #007bff;
-    margin-right: 10px;
-  }
-  
-  .showorders a:hover {
-    text-decoration: underline;
-  }
-  
-  .showorders button {
-    padding: 10px 30px;
-    background-color: #dc3545;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .showorders button:hover {
-    background-color: #c82333;
-  }
-  
-  .searchbtn input{
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 10%;
+}
 
-  .showorders table button{
-      padding: 5px 20px;
-  }
+.showorders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.showorders th,
+.showorders td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.searchbtn{
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.showorders th {
+  background-color: #f2f2f2;
+}
+
+.showorders tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.showorders tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.showorders a {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.showorders a:hover {
+  text-decoration: underline;
+}
+
+.showorders button {
+  padding: 10px 30px;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.showorders button:hover {
+  background-color: #c82333;
+}
+
+.searchbtn input{
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.showorders table button{
+    padding: 5px 20px;
+}
+
+.no-top-space {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Remove any top margin or padding from main containers */
+.special-table-container,
+.no-top-space,
+.orderDetailsWrapper,
+.showorders {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.special-table {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body, #root, .layout, .main-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.order-details-main {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.special-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.special-table th {
+  background: #e0aaff;
+  color: #2d1e4a;
+  font-weight: bold;
+  padding: 14px 10px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #b983ff;
+}
+
+.special-table td {
+  padding: 12px 10px;
+  font-size: 1rem;
+  color: #2d1e4a;
+  border-bottom: 1px solid #f0e6ff;
+}
+
+.special-table tr:nth-child(even) {
+  background: #f7f3ff;
+}
+
+.special-table tr:hover {
+  background: #e0aaff33;
+}
+
+.action-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.edit-btn {
+  background: #00bfae;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #009e8e;
+}
+
+.delete-btn {
+  background: #b983ff;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #a259e6;
+}

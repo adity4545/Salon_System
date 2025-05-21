@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 
 export default function ServiceUpdateForm() {
@@ -71,11 +71,11 @@ export default function ServiceUpdateForm() {
 
         // Validate price format
         if (name === "s_price") {
-            const priceRegex = /^Rs\.\d+(\.\d{2})?$/;
+            const priceRegex = /^\$\d+(\.\d{2})?$/;
             if (!priceRegex.test(value)) {
                 setErrors((prevErrors) => ({
                     ...prevErrors,
-                    s_price: "Price format should be in the format Rs.2000.00",
+                    s_price: "Price format should be in the format $20.00",
                 }));
             } else {
                 setErrors((prevErrors) => ({

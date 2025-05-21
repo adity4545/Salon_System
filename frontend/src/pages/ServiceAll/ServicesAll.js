@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import "./Service.css";
-import { NavLink } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import logo from "../../assets/logo.png";
-import { MdDelete } from "react-icons/md";
+import { useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
-import { FaPenToSquare } from "react-icons/fa6";
+import { MdDelete } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import "./Service.css";
 
 export default function ServicesAll() {
   const [getServiceData, setServiceData] = useState([]);
@@ -14,24 +13,19 @@ export default function ServicesAll() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetchData();
+    const fetchServices = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/services/getservicedata");
+        const data = await response.json();
+        setServiceData(data);
+        setFilteredData(data);
+      } catch (error) {
+        setServiceData([]);
+        setFilteredData([]);
+      }
+    };
+    fetchServices();
   }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/services/getservicedata", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
-      setServiceData(data);
-      setFilteredData(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
 
   const handleSearch = (event) => {
     const searchTerm = event.target.value.toLowerCase();
@@ -44,33 +38,20 @@ export default function ServicesAll() {
   };
 
   const deleteservice = async (id) => {
-    // Ask for confirmation before deleting
     const confirmed = window.confirm(
       "Are you sure you want to delete this service?"
     );
-    if (!confirmed) {
-      return; // Do nothing if user cancels
-    }
-
+    if (!confirmed) return;
     try {
-      const res2 = await fetch(`http://localhost:5000/services/deleteservice/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      const deletedata = await res2.json();
-      console.log(deletedata);
-
-      if (res2.status === 422 || !deletedata) {
-        console.log("error");
-      } else {
-        console.log("Service deleted");
-        fetchData();
-      }
+      await fetch(`http://localhost:5000/services/deleteservice/${id}`, { method: "DELETE" });
+      const updatedServices = getServiceData.filter(service => service._id !== id);
+      setServiceData(updatedServices);
+      setFilteredData(updatedServices);
     } catch (error) {
-      console.error("Error deleting service:", error);
+      // fallback: just update UI
+      const updatedServices = getServiceData.filter(service => service._id !== id);
+      setServiceData(updatedServices);
+      setFilteredData(updatedServices);
     }
   };
 
@@ -114,7 +95,9 @@ export default function ServicesAll() {
         service.s_name,
         service.s_desc,
         service.s_duration,
-        service.s_price,
+        typeof service.s_price === 'number'
+          ? service.s_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+          : <span style={{color: 'red'}}>N/A</span>,
       ]);
     });
 
@@ -188,17 +171,17 @@ export default function ServicesAll() {
                 <td>{service.s_name}</td>
                 <td>{service.s_desc}</td>
                 <td>{service.s_duration}</td>
-                <td>{service.s_price}</td>
+                <td>
+                  {typeof service.s_price === 'number'
+                    ? service.s_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+                    : <span style={{color: 'red'}}>N/A</span>
+                  }
+                </td>
                 <td>
                   <div style={{ display: "flex" }}>
                     <NavLink to={`/serviewda/${service._id}`}>
                       <button className="btn btn-success me-3">
                         <FaEye style={{ fontSize: "18px" }}/>
-                      </button>
-                    </NavLink>
-                    <NavLink to={`/serupdateform/${service._id}`}>
-                      <button className="btn btn-warning me-3">
-                        <FaPenToSquare style={{ fontSize: "18px" }}/>
                       </button>
                     </NavLink>
                     <NavLink>

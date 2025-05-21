@@ -1,17 +1,16 @@
-import React from "react";
+import Card from '../../components/card/Card';
+import './AdminHome.css';
 
 export default function AdminHome() {
     return (
-        <div>
-            <div style={{ marginTop: '100px', marginLeft: '30px', position: 'absolute',  }}>
-                <label style={{ fontSize: '70px', color: 'white' }} className="texto"><b>Hello Admin</b></label>
-            </div>
-            <div style={{ marginTop: '200px', marginLeft: '100px', position: 'absolute' }}>
-                <label style={{ fontSize: '50px', color: 'white' }} className="texto">Welcome to</label>
-            </div>
-            <div style={{ marginTop: '270px', marginLeft: '-120px', position: 'absolute' }}>
-                <label style={{ fontSize: '100px', color: 'white' }} className="texto"><b>Salon Suwani</b></label>
-            </div>
+        <div className="adminHomeWrapper">
+            <Card cardClass="adminHomeCard">
+                <div className="adminHomeLogo">💇‍♀️</div>
+                <h1 className="helloAdmin"><b>Welcome, Admin!</b></h1>
+                <h2 className="welcome">Manage your salon with ease and style.</h2>
+                <p className="adminHomeSubtitle">Access bookings, services and more from your dashboard.</p>
+                {/* <a href="/dashboard" className="adminHomeBtn">Go to Dashboard</a> */}
+            </Card>
         </div>
     )
 }

@@ -1,0 +1,58 @@
+.servicesContainer {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.servicesTitle {
+  color: #b983ff;
+  text-align: center;
+  margin-bottom: 36px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.serviceCard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 1.5px solid #e0aaff;
+}
+.serviceCard:hover {
+  box-shadow: 0 8px 32px rgba(185, 131, 255, 0.16);
+  border: 1.5px solid #b983ff;
+}
+
+.serviceName {
+  color: #b983ff;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.serviceDesc {
+  color: #6d4c9c;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.serviceDetail {
+  color: #2d1e4a;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+/* Remove mobile single-column override */ 

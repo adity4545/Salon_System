@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import './employeeSalarydetailes.css';
 
 const SpecialSalaryView = () => {
   const { id } = useParams();

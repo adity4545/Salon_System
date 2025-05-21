@@ -1,0 +1,125 @@
+.contactWrapper {
+  max-width: 1000px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.contactTitle {
+  color: #b983ff;
+  text-align: center;
+  margin-bottom: 36px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.contactSection {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contactForm {
+  flex: 1;
+  min-width: 320px;
+}
+
+.contactCard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1.5px solid #e0aaff;
+}
+
+.contactCard label {
+  font-weight: 600;
+  color: #6d4c9c;
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+}
+
+.contactCard input,
+.contactCard textarea {
+  padding: 14px 18px;
+  border: 1.5px solid #e0aaff;
+  border-radius: 18px;
+  font-size: 1.15rem;
+  background: #fafbfc;
+  resize: none;
+  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+  color: #2d1e4a;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.contactCard textarea {
+  min-height: 90px;
+}
+
+.sendButton {
+  background: linear-gradient(90deg, #b983ff 60%, #00bfae 100%);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 1.1rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.sendButton:hover {
+  background: linear-gradient(90deg, #00bfae 0%, #b983ff 100%);
+  color: #ffd700;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.details {
+  flex: 1;
+  min-width: 280px;
+}
+
+.infoCard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1.5px solid #e0aaff;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 22px;
+}
+.icons span {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #b983ff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.icons p {
+  margin: 0;
+  color: #6d4c9c;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .contactSection {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .details, .contactForm {
+    min-width: 0;
+  }
+} 

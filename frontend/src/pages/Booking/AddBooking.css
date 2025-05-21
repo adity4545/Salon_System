@@ -1,0 +1,96 @@
+.addBookingWrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.addBookingCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px 24px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: #cd2424;
+  margin-bottom: 24px;
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bookingForm label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.bookingForm input,
+.bookingForm select,
+.bookingForm textarea {
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fafbfc;
+  resize: none;
+}
+
+.bookingForm textarea {
+  min-height: 80px;
+}
+
+.invalidFeedback {
+  color: #ff4d4d;
+  font-size: 0.95rem;
+  margin-top: -10px;
+  margin-bottom: 8px;
+}
+
+.bookButton {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.bookButton:hover {
+  background: #218838;
+}
+
+.paymentCard {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px 18px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.paymentSection h3 {
+  color: #cd2424;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 600px) {
+  .addBookingCard {
+    padding: 16px 4px;
+  }
+  .paymentCard {
+    padding: 12px 2px;
+  }
+  .bookButton {
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+} 

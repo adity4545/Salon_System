@@ -1,0 +1,72 @@
+.dashboardWrapper {
+  max-width: 1000px;
+  margin: 48px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 0 24px;
+}
+
+.dashboardCard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
+  padding: 36px 32px;
+  margin: 0 auto;
+  border: 1.5px solid #e0aaff;
+}
+
+.bookingCount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #b983ff;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.dashboardTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #f7e1ff;
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 1.15rem;
+  box-shadow: 0 2px 12px rgba(185, 131, 255, 0.06);
+}
+
+.dashboardTable th, .dashboardTable td {
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.dashboardTable th {
+  background: linear-gradient(90deg, #b983ff 60%, #e0aaff 100%);
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid #e0aaff;
+}
+
+.dashboardTable tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+.dashboardTable tbody tr:hover {
+  background: #e0aaff;
+  color: #2d1e4a;
+}
+
+@media (max-width: 600px) {
+  .dashboardCard {
+    padding: 18px 6px;
+  }
+  .dashboardTable th, .dashboardTable td {
+    padding: 10px 6px;
+    font-size: 1rem;
+  }
+} 

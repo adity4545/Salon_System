@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
-import axios from "axios"
-import './repoart.css'
+import axios from "axios";
+import Card from 'components/card/Card';
+import { useEffect, useState } from 'react';
+import './Dashboard.css';
 
-function OrderRepoart(){
+function OrderReport(){
     const [countlist,setcountlist]=useState([]);
     const [customerlist,setcustomerlist]=useState([]);
-
 
 //read
 const getfetchdata=async()=>{
@@ -23,79 +23,40 @@ useEffect(()=>{
     getfetchdata()   
 },[])
 
-
-
-
-
-    
 return(
-    <div className='repoart'>
-  <h3>Total Booking :</h3>
+    <div className="dashboardWrapper">
+        <Card cardClass="dashboardCard">
+            <h3>Total Booking</h3>
             {countlist !== null ? (
-                <p>Total Booking: {countlist}
-               
-              
-                </p>
-                
+                <p className="bookingCount">{countlist}</p>
             ) : (
-                <p>Loading...
-                     </p>
-          
-               
+                <p>Loading...</p>
             )}
-
-<h3> Summary Of Booking System  :</h3>
- 
-
-    
-
-                  
-                         <table>
-                            <tr>
-              <th>User Name</th>
-              <th>User Email</th>
-              <th>User Description</th>
-            
-             
+        </Card>
+        <Card cardClass="dashboardCard">
+            <h3>Summary Of Booking System</h3>
+            <div className="tableWrapper">
+                <table className="dashboardTable">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>User Email</th>
+                            <th>User Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {customerlist.map((e, idx) => (
+                            <tr key={idx}>
+                                <td>{e.name}</td>
+                                <td>{e.email}</td>
+                                <td>{e.message}</td>
                             </tr>
-<tbody>
-    {
-customerlist.map((e)=>{
-                return(
-                            <tr>
-                                <td>
-                                {e.name} 
-                                </td>
-                                <td>
-                                {e.email}
-                                </td>
-                                <td>
-                                {e.message}
-                                </td>
-                               
-                               
-                            </tr>
-                )
-                              })
-}
-                            </tbody>
-                        </table>
-                        
-            
-              
-
-                     
-                    
-                
-                
-          
-           
-
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </Card>
     </div>
 )
-
-
-
-
 }
-export default OrderRepoart;
+export default OrderReport;

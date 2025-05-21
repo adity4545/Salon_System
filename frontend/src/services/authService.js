@@ -53,7 +53,7 @@ export const loginUser = async (userData) => {
 // Logout User
 export const logoutUser = async () => {
   try {
-    await axios.get(`${BACKEND_URL}/api/users/logout`);
+    await axios.get(`${BACKEND_URL}/api/users/logout`, { withCredentials: true });
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||

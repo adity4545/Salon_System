@@ -1,33 +1,34 @@
-import React from "react";
-import { logoutUser } from "../../services/authService";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_LOGIN, selectName } from "../../redux/features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
+import { selectUser, setLogout } from "../../redux/features/auth/authSlice";
+import { logoutUser } from "../../services/authService";
+import './Header.css';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const name = useSelector(selectName);
+  const user = useSelector(selectUser);
 
   const logout = async () => {
     await logoutUser();
-    await dispatch(SET_LOGIN(false));
+    dispatch(setLogout());
     navigate("/login");
   };
 
   return (
-    <div className="--pad header">
-      <div className="--flex-between">
-        <h3>
-          <span className="--fw-bold" style={{color: "white", fontSize: "30px"}}>Welcome, </span>
-          <span className="--color-danger" style={{fontSize: "30px"}}>{name} </span>
-        </h3>
-        <button onClick={logout} className="--btn --btn-danger" style={{marginLeft: "10px"}}>
-          Logout
-        </button>
+    <header className="salon-header">
+      <div className="salon-header__content">
+        <div className="salon-header__logo">
+          <span role="img" aria-label="Salon" className="salon-header__icon">💇‍♀️</span>
+          <span className="salon-header__brand">Salon Bliss</span>
+        </div>
+        <div className="salon-header__user">
+          <span className="salon-header__welcome">Welcome,</span>
+          <span className="salon-header__username">{user?.name}</span>
+          <button onClick={logout} className="salon-header__logout">Logout</button>
+        </div>
       </div>
-      <hr />
-    </div>
+    </header>
   );
 };
 

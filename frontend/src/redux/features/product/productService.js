@@ -1,8 +1,8 @@
 import axios from "axios";
+import { API_URL as CONFIG_API_URL } from 'config';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
-const API_URL = `${BACKEND_URL}/api/products/`;
+// const { API_URL : CONFIG_API_URL } = require('../../config');
+const API_URL = CONFIG_API_URL ? `${CONFIG_API_URL}/products/` : "http://localhost:5000/api/products/";
 
 // Create New Product
 const createProduct = async (formData) => {

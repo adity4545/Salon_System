@@ -1,10 +1,10 @@
-import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="--flex-center --py2">
-      <p>All Right Rederved. &copy; 2024</p>
-    </div>
+    <footer className="footer">
+      <p>All Rights Reserved. &copy; 2024</p>
+    </footer>
   );
 };
 

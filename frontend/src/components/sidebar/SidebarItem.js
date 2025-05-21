@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 const activeLink = ({ isActive }) => (isActive ? "active" : "link");
 const activeSublink = ({ isActive }) => (isActive ? "active" : "link");
@@ -13,35 +12,27 @@ const SidebarItem = ({ item, isOpen }) => {
           expandMenu ? "sidebar-item s-parent open" : "sidebar-item s-parent"
         }
       >
-        <div className="sidebar-title">
+        <div className="sidebar-title" onClick={() => setExpandMenu(!expandMenu)} style={{ cursor: 'pointer' }}>
           <span>
             {item.icon && <div className="icon">{item.icon}</div>}
-            {isOpen && <div>{item.title}</div>}
+            <div>{item.title}</div>
           </span>
-          <MdKeyboardArrowRight
-            size={25}
-            className="arrow-icon"
-            onClick={() => setExpandMenu(!expandMenu)}
-          />
+          <div className="dropdown-indicator" style={{ marginLeft: 'auto', fontWeight: 700 }}>
+            {expandMenu ? "▲" : "▼"}
+          </div>
         </div>
-        <div className="sidebar-content">
-          {item.childrens.map((child, index) => {
-            return (
+        {expandMenu && (
+          <div className="sidebar-dropdown-menu">
+            {item.childrens.map((child, index) => (
               <div key={index} className="s-child">
-                <NavLink to={child.path} className={activeSublink}>
-                  <div className="sidebar-item">
-                    <div className="sidebar-title">
-                      <span>
-                        {child.icon && <div className="icon">{child.icon}</div>}
-                        {isOpen && <div>{child.title}</div>}
-                      </span>
-                    </div>
-                  </div>
+                <NavLink to={child.path} className={activeSublink} style={{ display: 'block' }}>
+                  {child.icon && <span className="icon">{child.icon}</span>}
+                  <span>{child.title}</span>
                 </NavLink>
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   } else {
@@ -51,7 +42,7 @@ const SidebarItem = ({ item, isOpen }) => {
           <div className="sidebar-title">
             <span>
               {item.icon && <div className="icon">{item.icon}</div>}
-              {isOpen && <div>{item.title}</div>}
+              <div>{item.title}</div>
             </span>
           </div>
         </div>

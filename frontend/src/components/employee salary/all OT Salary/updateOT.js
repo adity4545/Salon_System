@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import './updateSalary.css';
+import { useEffect, useState } from "react";
+// import './updateSalary.css';
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 

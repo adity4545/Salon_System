@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import styles from "./auth.module.scss";
+import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
-import Card from "../../components/card/Card";
 import { Link } from "react-router-dom";
-import { forgotPassword, validateEmail } from "../../services/authService";
 import { toast } from "react-toastify";
+import Card from "../../components/card/Card";
+import { forgotPassword, validateEmail } from "../../services/authService";
+import './auth.css';
 
 const Forgot = () => {
   const [email, setEmail] = useState("");
@@ -28,14 +28,14 @@ const Forgot = () => {
   };
 
   return (
-    <div className={`container ${styles.auth}`}>
-      <Card>
-        <div className={styles.form}>
-          <div className="--flex-center">
-            <AiOutlineMail size={35} color="#999" />
+    <div className="authWrapper">
+      <Card cardClass="formCard">
+        <div className="form">
+          <div className="iconCenter">
+            <AiOutlineMail size={35} color="#000" />
           </div>
-          <h2>Get Reset Email</h2>
-          <form onSubmit={forgot}>
+          <h2 className="title">Get Reset Email</h2>
+          <form onSubmit={forgot} className="authForm">
             <input
               type="email"
               placeholder="Email"
@@ -45,10 +45,10 @@ const Forgot = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <button type="submit" className="--btn --btn-primary --btn-block">
+            <button type="submit" className="authButton">
               Get Reset Email
             </button>
-            <div className={styles.links}>
+            <div className="links">
               <p>
                 <Link to="/">- Home</Link>
               </p>

@@ -1,5 +1,5 @@
+import { useState } from "react";
 import "./ServiceAdd.css";
-import React, { useState } from "react";
 
 export default function ServiceAdd() {
     const [inputVal, setInputVal] = useState({
@@ -35,7 +35,7 @@ export default function ServiceAdd() {
             const priceValid = validatePrice(value);
             setErrors(prevErrors => ({
                 ...prevErrors,
-                s_price: priceValid ? "" : "Invalid price format(Rs.1000.00)",
+                s_price: priceValid ? "" : "Invalid price format (e.g. 20.00)",
             }));
         }
     };
@@ -93,8 +93,7 @@ export default function ServiceAdd() {
 
     // Validation for price format
     const validatePrice = (price) => {
-        const regex = /^Rs\.\d+\.\d{2}$/;
-        return regex.test(price);
+        return /^\d+(\.\d{2})?$/.test(price);
     };
 
     return (
@@ -119,8 +118,8 @@ export default function ServiceAdd() {
                         {errors.s_duration && <div className="invalid-feedback">{errors.s_duration}</div>}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="s_price">Service Price:</label>
-                        <input type="text" className={`form-control ${errors.s_price ? "is-invalid" : ""}`} id="s_price"
+                        <label htmlFor="s_price">Service Price (USD):</label>
+                        <input type="number" step="0.01" className={`form-control ${errors.s_price ? "is-invalid" : ""}`} id="s_price"
                             placeholder="Service Price" name="s_price" onChange={setDate} value={inputVal.s_price} />
                         {errors.s_price && <div className="invalid-feedback">{errors.s_price}</div>}
                     </div>

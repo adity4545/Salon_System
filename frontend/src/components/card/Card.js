@@ -1,7 +1,7 @@
-import styles from "./Card.module.scss";
+import './Card.css';
 
 const Card = ({ children, cardClass }) => {
-  return <div className={`${styles.card} ${cardClass}`}>{children}</div>;
+  return <div className={`card ${cardClass}`}>{children}</div>;
 };
 
 export default Card;

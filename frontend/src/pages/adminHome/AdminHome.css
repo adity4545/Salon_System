@@ -1,0 +1,89 @@
+.adminHomeWrapper {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.adminHomeCard {
+  background: linear-gradient(135deg, #f7e1ff 0%, #e0aaff 100%);
+  border-radius: 3rem;
+  width: 100%;
+  box-shadow: 0 6px 32px rgba(185, 131, 255, 0.13);
+  padding: 64px 48px;
+  text-align: center;
+  border: 2px solid #ffd700;
+  display: flex;
+  font-size: 7rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adminHomeLogo {
+  /* font-size: 3.5rem; */
+  margin-bottom: 18px;
+  color: #b983ff;
+}
+
+.helloAdmin {
+  /* font-size: 3rem; */
+  color: #b983ff;
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.welcome {
+  /* font-size: 1.7rem; */
+  color: #00bfae;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.adminHomeSubtitle {
+  /* font-size: 1.1rem; */
+  color: #6d4c9c;
+  margin-bottom: 32px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.adminHomeBtn {
+  background: linear-gradient(90deg, #ffd700 0%, #00bfae 100%);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(185, 131, 255, 0.10);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  font-family: 'Montserrat', sans-serif;
+}
+.adminHomeBtn:hover {
+  background: linear-gradient(90deg, #00bfae 0%, #ffd700 100%);
+  color: #b983ff;
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .adminHomeCard {
+    padding: 28px 8px;
+  }
+  .helloAdmin {
+    font-size: 2.2rem;
+  }
+  .welcome {
+    font-size: 1.1rem;
+  }
+  .adminHomeBtn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+} 

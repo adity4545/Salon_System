@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Swal from 'sweetalert2';
 import '../employee salary/all OT Salary/addSpecialSalaryLeave.css';
 import Formtable from "./Formtable";
-import axios from "axios";
-import Swal from 'sweetalert2';
+// import Sidebar from "components/sidebar/Sidebar";
+/* import Services from "../Services/Services"; // Removed because the Services component does not exist */
 
 axios.defaults.baseURL = "http://localhost:5000/";
 
@@ -187,65 +189,66 @@ export default function AddVacancy() {
         setEditSection(true);
     };
 
+    
+
     return (
-        <div className='special-table-container'>
-            {successMessage && (
-                <div className="alert alert-success" role="alert">
-                    {successMessage}
-                </div>
-            )}
-            <button className="special-add-button" onClick={() => setAddSection(true)}>Add Vacancy</button>
+        <>
+            <div className='special-table-container'>
+                {successMessage && (
+                    <div className="alert alert-success" role="alert">
+                        {successMessage}
+                    </div>
+                )}
+                <button className="special-add-button" onClick={() => setAddSection(true)}>Add Vacancy</button>
 
-            {addSection && (
-                <Formtable
-                    handleSubmit={handleSubmit}
-                    handleOnChange={handleOnChange}
-                    handleclose={() => setAddSection(false)}
-                    readonly={formData}
-                />
-            )}
+                {addSection && (
+                    <Formtable
+                        handleSubmit={handleSubmit}
+                        handleOnChange={handleOnChange}
+                        handleclose={() => setAddSection(false)}
+                        readonly={formData} />
+                )}
 
-            {editSection && (
-                <Formtable
-                    handleSubmit={handleUpdate}
-                    handleOnChange={handleEditOnChange}
-                    handleclose={() => setEditSection(false)}
-                    readonly={formDataEdit}
-                />
-            )}
+                {editSection && (
+                    <Formtable
+                        handleSubmit={handleUpdate}
+                        handleOnChange={handleEditOnChange}
+                        handleclose={() => setEditSection(false)}
+                        readonly={formDataEdit} />
+                )}
 
-            <table className="special-table">
-                <thead>
-                    <tr className="special-table-header">
-                        <th>Position</th>
-                        <th>Salary</th>
-                        <th>Age Limit</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dataList.length > 0 ? (
-                        dataList.map((item, index) => (
-                            <tr className="special-table-row" key={index} style={{ color: '#3b2918' }} >
-                                <td>{item.position}</td>
-                                <td>{item.salary}</td>
-                                <td>{item.age_limit}</td>
-                                <td>{item.description}</td>
-                                <td>
-                                    <button className="special-action-button update" onClick={() => handleEdit(item)} style={{ width: '63px', height: '35px' ,marginBottom :'8px'}}>Edit</button>
-                                    <button className="special-action-button delete" onClick={() => handleDelete(item._id)}>Delete</button>
-                                </td>
-                            </tr>
-                        ))
-                    ) : (
-                        <tr>
-                            <td colSpan="5" style={{ textAlign: "center"}}>No data</td>
+                <table className="special-table">
+                    <thead>
+                        <tr className="special-table-header">
+                            <th>Position</th>
+                            <th>Salary</th>
+                            <th>Age Limit</th>
+                            <th>Description</th>
+                            <th>Action</th>
                         </tr>
-                    )}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {dataList.length > 0 ? (
+                            dataList.map((item, index) => (
+                                <tr className="special-table-row" key={index} style={{ color: '#3b2918' }}>
+                                    <td>{item.position}</td>
+                                    <td>{item.salary}</td>
+                                    <td>{item.age_limit}</td>
+                                    <td>{item.description}</td>
+                                    <td>
+                                        <button className="action-btn edit-btn" onClick={() => handleEdit(item)}>Edit</button>
+                                        <button className="action-btn delete-btn" onClick={() => handleDelete(item._id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="5" style={{ textAlign: "center" }}>No data</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+            </div></>
     );
 }
 

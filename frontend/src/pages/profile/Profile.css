@@ -1,0 +1,35 @@
+.profileWrapper {
+  max-width: 650px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.profileCard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
+  padding: 36px 32px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1.5px solid #e0aaff;
+}
+
+.title {
+  color: #b983ff;
+  margin-bottom: 22px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.description {
+  color: #6d4c9c;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .profileCard {
+    padding: 18px 6px;
+  }
+} 

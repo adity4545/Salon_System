@@ -1,0 +1,215 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/Home1.png'); 
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  
+}
+
+
+.auth {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Other styles specific to the .auth container */
+}
+
+.img {
+  animation: slide-down 0.5s ease;
+}
+
+.form {
+  width: 35rem;
+  padding: 1.5rem;
+  animation: slide-up 0.5s ease;
+  background-color: #e8c2b7;
+  border: 1px solid rgb(233, 165, 165);
+}
+
+h2 {
+  color: rgb(143, 107, 107);
+  text-align: center;
+}
+
+form {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 100%;
+    border: 1px solid rgb(255, 254, 254);
+    border-bottom: 3px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    outline: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #55c57a;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid #ff7730;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+
+  p {
+    text-align: center;
+    margin: 1rem;
+  }
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(-5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .img {
+    display: none;
+  }
+}
+
+// Modern Login page styles
+.loginModernBg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f8ede3 0%, #f7cac9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginCardModern {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(205,36,36,0.08), 0 1.5px 8px rgba(0,0,0,0.04);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginTitleModern {
+  font-size: 2rem;
+  color: #cd2424;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.loginFormModern {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.loginInputModern {
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid #f7cac9;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background: #f8ede3;
+  transition: border 0.2s;
+}
+.loginInputModern:focus {
+  border: 1.5px solid #cd2424;
+  outline: none;
+}
+
+.loginBtnModern {
+  background: #cd2424;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
+}
+.loginBtnModern:hover {
+  background: #a81e1e;
+}
+
+.googleBtnModern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #db4437;
+  border: 2px solid #db4437;
+  border-radius: 8px;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  gap: 0.7rem;
+  transition: background 0.2s, color 0.2s;
+}
+.googleBtnModern:hover {
+  background: #fbe9e7;
+  color: #a81e1e;
+}
+.googleIconModern {
+  width: 22px;
+  height: 22px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg') no-repeat center/contain;
+  display: inline-block;
+}
+
+.loginRegisterModern {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+@media (max-width: 500px) {
+  .loginCardModern {
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .loginTitleModern {
+    font-size: 1.3rem;
+  }
+}

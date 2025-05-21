@@ -1,6 +1,7 @@
-import {useEffect, useState} from 'react'
+import Card from 'components/card/Card';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './orderupdate.css'
+import './UpdateOrder.css';
 
 function UpdateOrder(){
     const { id } = useParams();
@@ -70,29 +71,36 @@ function UpdateOrder(){
 
 
     return(
-        <div className='order-update'>
+        <div className="updateOrderWrapper">
+            <Card cardClass="updateOrderCard">
+                <h2 className="title">Update Details</h2>
+                <form className="updateForm" onSubmit={e => { e.preventDefault(); handleUpdate(); }}>
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" name="name" onChange={handleInputChange} value={updateorder?.name} />
 
-<h2> Update Details</h2><br></br>
-    <lable>Name:</lable>
-    <input type="text" id="name" name="name" onChange={handleInputChange} value={updateorder?.name }/><br></br>
-    <lable>Contact Number :</lable>
-    <input type="text" id="phone" name="phone" onChange={handleInputChange} value={updateorder?.phone}/><br></br>
-    <lable>Email:</lable>
-    <input type="text" id="email" name="email" onChange={handleInputChange} value={updateorder?.email}/><br></br> 
-    <lable>Service:</lable>
-    <select id="service"  name="service" onChange={handleInputChange} value={updateorder?.service}>
-        <option> Hair </option>
-        <option> Skin </option>
-        <option> Nails </option>
-    </select><br></br> 
-    <lable>Preferd Date & Time:</lable>
-    <input type="date" id="date" name="date" onChange={handleInputChange} value={updateorder?.date}/><br></br> 
-    <lable>Message:</lable>
-    <textarea id="message" name="message" onChange={handleInputChange} value={updateorder?.message}></textarea><br></br> 
-    
-    <button onClick={handleUpdate} >Update</button><br></br> <br></br> 
-  
- 
+                    <label htmlFor="phone">Contact Number:</label>
+                    <input type="text" id="phone" name="phone" onChange={handleInputChange} value={updateorder?.phone} />
+
+                    <label htmlFor="email">Email:</label>
+                    <input type="text" id="email" name="email" onChange={handleInputChange} value={updateorder?.email} />
+
+                    <label htmlFor="service">Service:</label>
+                    <select id="service" name="service" onChange={handleInputChange} value={updateorder?.service}>
+                        <option value="">Select Service</option>
+                        <option value="Hair">Hair</option>
+                        <option value="Skin">Skin</option>
+                        <option value="Nails">Nails</option>
+                    </select>
+
+                    <label htmlFor="date">Preferred Date & Time:</label>
+                    <input type="date" id="date" name="date" onChange={handleInputChange} value={updateorder?.date} />
+
+                    <label htmlFor="message">Message:</label>
+                    <textarea id="message" name="message" onChange={handleInputChange} value={updateorder?.message}></textarea>
+
+                    <button type="submit" className="updateButton">Update</button>
+                </form>
+            </Card>
         </div>
     )
 }

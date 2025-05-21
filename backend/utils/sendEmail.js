@@ -25,12 +25,16 @@ const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
   };
 
   // send the email
-  transporter.sendMail(options, function (err, info) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(info);
-    }
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(options, function (err, info) {
+      if (err) {
+        console.log(err);
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(info);
+      }
+    });
   });
 };
 

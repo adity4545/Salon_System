@@ -47,13 +47,13 @@ const registerUser = asyncHandler(async (req, res) => {
   res.cookie("token", token, {
     path: "/",
     httpOnly: true,
-    expires: new Date(Date.now() + 10000 * 86400), // 1 day
-    sameSite: "none",
-    secure: true,
+    expires: new Date(Date.now() + 1000 * 86400), // 1 day
+    sameSite: "lax",
+    secure: false,
   });
 
   if (user) {
-    const { _id, name, email, photo, phone, bio } = user;
+    const { _id, name, email, photo, phone, bio, role } = user;
     res.status(201).json({
       _id,
       name,
@@ -61,6 +61,7 @@ const registerUser = asyncHandler(async (req, res) => {
       photo,
       phone,
       bio,
+      role,
       token,
     });
   } else {
@@ -99,14 +100,14 @@ const loginUser = asyncHandler(async (req, res) => {
     res.cookie("token", token, {
       path: "/",
       httpOnly: true,
-      expires: new Date(Date.now() + 10000 * 86400), // 1 day
-      sameSite: "none",
-      secure: true,
+      expires: new Date(Date.now() + 1000 * 86400), // 1 day
+      sameSite: "lax",
+      secure: false,
     });
   }
 
   if (user && passwordIsCorrect) {
-    const { _id, name, email, photo, phone, bio } = user;
+    const { _id, name, email, photo, phone, bio, role } = user;
     res.status(201).json({
       _id,
       name,
@@ -114,6 +115,7 @@ const loginUser = asyncHandler(async (req, res) => {
       photo,
       phone,
       bio,
+      role,
       token,
     });
   } else {
@@ -128,8 +130,8 @@ const logOut = asyncHandler(async (req, res) => {
     path: "/",
     httpOnly: true,
     expires: new Date(0), // expired
-    sameSite: "none",
-    secure: true,
+    sameSite: "lax",
+    secure: false,
   });
   return res.status(200).json({ message: "Successfully LogOut" });
 });
@@ -139,7 +141,7 @@ const getUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
   if (user) {
-    const { _id, name, email, photo, phone, bio } = user;
+    const { _id, name, email, photo, phone, bio, role } = user;
     res.status(201).json({
       _id,
       name,
@@ -147,6 +149,7 @@ const getUser = asyncHandler(async (req, res) => {
       photo,
       phone,
       bio,
+      role,
     });
   } else {
     res.status(400);

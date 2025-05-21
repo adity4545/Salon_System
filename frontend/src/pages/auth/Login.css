@@ -1,0 +1,162 @@
+.login-bg {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e6c6fa;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lux-logo {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #a259e6;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tagline {
+  color: #7c3aed;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.login-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.1rem;
+  border-radius: 0.7rem;
+  border: none;
+  background: #fff;
+  font-size: 1.08rem;
+  margin-bottom: 0.2rem;
+  box-shadow: none;
+  transition: background 0.2s;
+}
+.login-input:focus {
+  background: #f3eaff;
+  outline: 2px solid #a259e6;
+}
+
+.show-hide-btn {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, #a259e6 0%, #7c3aed 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  padding: 0.3rem 1.2rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.login-btn {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(90deg, #a259e6 0%, #7c3aed 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  box-shadow: none;
+  transition: background 0.2s;
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #7c3aed 0%, #a259e6 100%);
+}
+
+.login-divider {
+  text-align: center;
+  color: #a259e6;
+  font-size: 1rem;
+  margin: 0.7rem 0 0.2rem 0;
+}
+
+.login-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #db4437;
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.login-google-btn:hover {
+  background: #c23321;
+}
+
+.login-register-link {
+  text-align: center;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+}
+.login-register-link span {
+  color: #7c3aed;
+  margin-right: 0.3rem;
+}
+.login-register-link a {
+  color: #7c3aed;
+  background: none;
+  padding: 0;
+  border-radius: 0.5rem;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.login-register-link a:hover {
+  color: #a259e6;
+}
+
+.testimonial {
+  color: #7c3aed;
+  font-size: 0.98rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
+  letter-spacing: 0.2px;
+}
+
+.input-underline, .bg-overlay, .glass-card { display: none; }
+
+@media (max-width: 600px) {
+  .login-form, .login-btn, .login-input {
+    max-width: 95vw;
+  }
+} 

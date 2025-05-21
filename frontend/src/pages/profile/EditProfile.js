@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Card from "../../components/card/Card";
+import ChangePassword from "../../components/changePassword/ChangePassword";
 import Loader from "../../components/loader/Loder";
 import { selectUser } from "../../redux/features/auth/authSlice";
-import "./Profile.scss";
-import { toast } from "react-toastify";
 import { updateUser } from "../../services/authService";
-import ChangePassword from "../../components/changePassword/ChangePassword";
+import "./Profile.scss";
 
 const EditProfile = () => {
   const navigate = useNavigate();

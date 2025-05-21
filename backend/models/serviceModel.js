@@ -15,7 +15,7 @@ const serviceModel = new mongoose.Schema({
         required: true
     },
     s_price: {
-        type: String,
+        type: Number,
         required: true
     }
 }, {

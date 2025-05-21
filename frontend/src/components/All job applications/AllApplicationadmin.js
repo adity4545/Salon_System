@@ -3,7 +3,6 @@ import axios from "axios";
 import Swal from 'sweetalert2';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
-import "../employee salary/all OT Salary/allSpecialLeave.css";
 
 function AllApplicationadmin() {
   const [applicants, setApplicants] = useState([]);

@@ -1,53 +1,45 @@
-import React, { useState } from "react";
-import "./Sidebar.scss";
+import { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-import menu from "../../data/sidebar";
-import SidebarItem from "./SidebarItem";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-import sideLogo from "../../assets/sidelogo.png"; // Import the image
+import menu from "../../data/sidebar";
+import { setLogout } from "../../redux/features/auth/authSlice";
+import "./Sidebar.css";
+import SidebarItem from "./SidebarItem";
 
 const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(true);
-  const toggle = () => setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen((open) => !open);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const goHome = () => {
-    navigate("/");
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    dispatch(setLogout());
+    navigate("/login");
   };
 
   return (
     <div className="layout">
-      <div className="sidebar" style={{ width: isOpen ? "230px" : "60px" }}>
-        <div className="top_section">
-          <div className="logo" style={{ display: isOpen ? "block" : "none" }}>
-            <img
-              src={sideLogo} // Use the imported image
-              alt="Sidebar Logo"
-              style={{ cursor: "pointer" }}
-              onClick={goHome}
-            />
-          </div>
-          <div
-            className="bars"
-            style={{ marginLeft: isOpen ? "100px" : "0px" }}
-          >
-            <HiMenuAlt3 onClick={toggle} />
-          </div>
+      <aside className={`sidebar${isOpen ? " open" : ""}`}>
+        <div className="sidebar-header">
+          <button className="toggle-button" onClick={toggle} aria-label="Toggle sidebar">
+            <HiMenuAlt3 />
+          </button>
         </div>
-        {menu.map((item, index) => {
-          return <SidebarItem key={index} item={item} isOpen={isOpen} />;
-        })}
-      </div>
-
-      <main
-        style={{
-          paddingLeft: isOpen ? "230px" : "60px",
-          transition: "all .5s",
-        }}
-      >
-        {children}
-      </main>
+        <nav className="menu">
+          {menu.map((item, index) => (
+            <SidebarItem key={index} item={item} isOpen={isOpen} />
+          ))}
+        </nav>
+        <div className="footer">
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+      </aside>
+      <main className={`main-content${isOpen ? " sidebar-open" : ""}`}>{children}</main>
     </div>
   );
 };

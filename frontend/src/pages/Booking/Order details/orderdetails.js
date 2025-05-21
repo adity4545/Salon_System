@@ -1,7 +1,8 @@
-import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import './allSpecialLeave.css';
+import Sidebar from 'components/sidebar/Sidebar';
+import { useEffect, useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import './OrderDetails.css';
 
 function OrderDetails() {
     const componentPDF = useRef();
@@ -53,7 +54,8 @@ function OrderDetails() {
     };
 
     return (
-        <div className="special-table-container" style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+        <Sidebar>
+          <div className="order-details-main">
             <div className="special-search-container">
                 <input
                     type="search"
@@ -70,39 +72,46 @@ function OrderDetails() {
                     Search
                 </button>
             </div>
-            <div ref={componentPDF} style={{ width: '100%', marginTop: '20px' }}>
-                <table className="special-table" style={{ width: '100%', borderCollapse: 'collapse', marginTop: '10px' }}>
-                    <thead>
-                        <tr className="special-table-header">
-                            <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Name</th>
-                            <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Phone Numbers</th>
-                            <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Email</th>
-                            <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Service</th>
-                            <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Date</th>
-                            <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Description</th>
-                            <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {showdiscounts.map((e1) => (
-                            <tr key={e1._id} className="special-table-row" style={{ borderBottom: '1px solid #ddd', backgroundColor: '#f9f9f9' }}>
-                                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.name}</td>
-                                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.phone}</td>
-                                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.email}</td>
-                                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.service}</td>
-                                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.date}</td>
-                                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.message}</td>
-                                <td style={{ border: '1px solid #ddd', padding: '8px' }}>
-                                    <a href={`/updateorder/${e1._id}`} style={{ marginRight: '8px' }}>Edit Order</a>
-                                    <button onClick={() => handledelete(e1._id)} style={{ marginRight: '8px', cursor: 'pointer', padding: '8px 16px', backgroundColor: 'red', color: 'white', borderRadius: '4px', border: 'none' }}>Delete Order</button>
-                                </td>
+            <div ref={componentPDF} style={{ width: '100%' }}>
+                {showdiscounts.length === 0 ? (
+                    <div style={{ textAlign: 'center', color: 'blue', marginTop: '20px' }}>
+                        No order details found.
+                    </div>
+                ) : (
+                    <table className="special-table" style={{ width: '100%', borderCollapse: 'collapse', marginTop: '0' }}>
+                        <thead>
+                            <tr className="special-table-header">
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Name</th>
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Phone Numbers</th>
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Email</th>
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Service</th>
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Date</th>
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Description</th>
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Action</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {showdiscounts.map((e1) => (
+                                <tr key={e1._id} className="special-table-row" style={{ borderBottom: '1px solid #ddd', backgroundColor: '#f9f9f9' }}>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.name}</td>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.phone}</td>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.email}</td>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.service}</td>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.date}</td>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.message}</td>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>
+                                        <a href={`/updateorder/${e1._id}`} className="action-btn edit-btn">Edit Order</a>
+                                        <button onClick={() => handledelete(e1._id)} className="action-btn delete-btn">Delete Order</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
             </div>
             <button onClick={generatePDF} style={{ padding: '10px 20px', fontSize: '16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px', backgroundColor: 'green', color: 'white', border: 'none' }}>Download Report</button>
-        </div>
+          </div>
+        </Sidebar>
     );
 }
 

@@ -1,81 +1,115 @@
 /* addSpecialSalaryLeave.css */
 
 .addspecialsalaryleave-container {
-    max-width: 1000px; /* Increase the max-width for a wider container */
-    margin: 0 auto;
-    padding: 70px; /* Adjust padding for more compact spacing */
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center align content */
+    max-width: 900px;
+    margin: 48px auto;
+    padding: 44px 32px;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(185, 131, 255, 0.13);
+    text-align: center;
+    border: 1.5px solid #e0aaff;
 }
 
 .addspecialsalaryleave-title {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    margin-bottom: 28px;
+    font-size: 2.2rem;
+    color: #b983ff;
+    font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 .addspecialsalaryleave-form .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     display: flex;
-    flex-direction: column; /* Ensure labels and inputs stack vertically */
-    align-items: flex-start; /* Align items to the start */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .addspecialsalaryleave-form label {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 5px; /* Space between label and input */
+    font-size: 1.2rem;
+    color: #6d4c9c;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .addspecialsalaryleave-form input[type="text"],
 .addspecialsalaryleave-form input[type="email"] {
-    width: 100%; /* Make input fields span the full width of the container */
-    max-width: 950px; /* Limit the maximum width of the input fields */
-    padding: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #555;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%;
+    max-width: 700px;
+    padding: 1.1rem 1.6rem;
+    border: 1.5px solid #e0aaff;
+    border-radius: 18px;
+    font-size: 1.15rem;
+    color: #2d1e4a;
+    background: #fafbfc;
+    font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
 }
 
 .addspecialsalaryleave-form input[type="text"]:focus,
 .addspecialsalaryleave-form input[type="email"]:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #b983ff;
+    box-shadow: 0 0 0 2px #e0aaff;
 }
 
 .addspecialsalaryleave-form .btn-primary {
-    width: 100%; /* Make the button span the full width */
-    max-width: 950px; /* Limit the maximum width of the button */
-    padding: 10px;
+    width: 100%;
+    max-width: 700px;
+    padding: 1.1rem 0;
     border: none;
-    border-radius: 5px;
-    background-color: #007bff;
+    border-radius: 18px;
+    background: linear-gradient(90deg, #b983ff 60%, #00bfae 100%);
     color: #fff;
-    font-size: 16px;
+    font-size: 1.3rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-    display: inline-block; /* Center the button */
+    margin-top: 18px;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+    box-shadow: 0 2px 12px rgba(185, 131, 255, 0.10);
+    display: inline-block;
 }
-
 .addspecialsalaryleave-form .btn-primary:hover {
-    background-color: #0056b3;
+    background: linear-gradient(90deg, #00bfae 0%, #b983ff 100%);
+    color: #ffd700;
+    transform: translateY(-2px) scale(1.04);
 }
 
 .addspecialsalaryleave-form .text-danger {
-    color: #dc3545;
-    font-size: 14px;
+    color: #ff4d4d;
+    font-size: 1rem;
+    margin-top: 4px;
 }
 
-/* Styling for the "Go Back All OT Salary" button */
 .addspecialsalaryleave-container .btn-info {
     width: auto;
-    padding: 8px 16px;
-    font-size: 14px;
-    display: inline-block;
-    margin-top: 15px; /* Add some margin for better spacing */
+    padding: 0.8rem 1.6rem;
+    font-size: 1.1rem;
+    border-radius: 18px;
+    background: linear-gradient(90deg, #00bfae 60%, #b983ff 100%);
+    color: #fff;
+    font-weight: 600;
+    margin-top: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.addspecialsalaryleave-container .btn-info:hover {
+    background: linear-gradient(90deg, #b983ff 0%, #00bfae 100%);
+    color: #ffd700;
+    transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 700px) {
+    .addspecialsalaryleave-container {
+        padding: 18px 6px;
+    }
+    .addspecialsalaryleave-form input[type="text"],
+    .addspecialsalaryleave-form input[type="email"] {
+        max-width: 100%;
+    }
+    .addspecialsalaryleave-form .btn-primary {
+        max-width: 100%;
+    }
 }
