@@ -1,19 +1,18 @@
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import axios from "axios";
+import Footer from 'components/footer/Footer';
+import Header from 'Header/Header';
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Card from '../../components/card/Card';
 import PaymentComponent from '../../components/PaymentComponent/PaymentComponent';
-import { setLogout } from "../../redux/features/auth/authSlice";
-import { logoutUser } from "../../services/authService";
 import '../Home/Home.css';
 import './AddBooking.css';
 
 function AddBooking() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const [Booking, setBooking] = useState({
     name: "",
@@ -26,7 +25,6 @@ function AddBooking() {
 
   const [errors, setErrors] = useState({});
   const [showPayment, setShowPayment] = useState(false);
-  const [canProceedPayment, setCanProceedPayment] = useState(false);
 
   const [services, setServices] = useState([]);
   const [paymentAmount, setPaymentAmount] = useState('100.00');
@@ -95,39 +93,16 @@ function AddBooking() {
       const price = selectedService && typeof selectedService.s_price === 'number' ? selectedService.s_price : '100.00';
       setPaymentAmount(price);
       setShowPayment(true);
-      setCanProceedPayment(true);
       await axios.post("http://localhost:5000/create", Booking);
     } catch (error) {
       alert("Failed to book!");
     }
   };
-  const handleLogout = async () => {
-    await logoutUser();
-    dispatch(setLogout());
-    navigate("/login");
-  };
 
 
   return (
       <>
-      <nav className="home-header">
-        <div className="container home-header-content">
-          <div className="home-logo">
-            <Link to="/home">Salon<span>System</span></Link>
-          </div>
-          <ul className="home-nav">
-            <li><Link to="/Services">Service</Link></li>
-            <li><Link to="/createBooking">Booking</Link></li>
-            <li><Link to="/az">Vacancy</Link></li>
-            <li><Link to="/contact-us">Contact</Link></li>
-            <li>
-              <button onClick={handleLogout} className="hero-btn" style={{marginLeft: '1rem'}}>
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+     <Header />
     <div className="addBookingWrapper">
       <Card cardClass="addBookingCard">
         <h2 className="title">Online Booking Form</h2>
@@ -177,6 +152,7 @@ function AddBooking() {
         )}
       </Card>
     </div>
+    <Footer />
     </>
   );
 }

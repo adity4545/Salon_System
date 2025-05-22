@@ -1,23 +1,13 @@
 import { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import '../../pages/Home/Home.css';
-import { setLogout } from "../../redux/features/auth/authSlice";
-import { logoutUser } from "../../services/authService";
 import './Vacanciesdisplay.css'; // Updated CSS file name
 
 import axios from 'axios';
+import Header from 'Header/Header';
+import Footer from 'components/footer/Footer';
 
 const Vacanciesdisplay = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await logoutUser();
-    dispatch(setLogout());
-    navigate("/login");
-  };
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -44,24 +34,7 @@ const Vacanciesdisplay = () => {
 
   return (
     <>
-      <nav className="home-header">
-        <div className="container home-header-content">
-          <div className="home-logo">
-            <Link to="/home">Salon<span>System</span></Link>
-          </div>
-          <ul className="home-nav">
-            <li><Link to="/Services">Service</Link></li>
-            <li><Link to="/createBooking">Booking</Link></li>
-            <li><Link to="/az">Vacancy</Link></li>
-            <li><Link to="/contact-us">Contact</Link></li>
-          <li>
-              <button onClick={handleLogout} className="hero-btn" style={{marginLeft: '1rem'}}>
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Header />
       <div className="job-vacancy-display">
         <div className="photo" style={{ backgroundImage: 'url(./pic.jpg)' }}>
           <div className="container">
@@ -99,6 +72,7 @@ const Vacanciesdisplay = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

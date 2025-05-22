@@ -2,15 +2,13 @@ import axios from "axios";
 import { useState } from "react";
 import { FaEnvelope, FaPhoneAlt, FaTwitter } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
-import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Card from "../../components/card/Card";
-import { useDispatch } from "react-redux";
-import { setLogout } from "../../redux/features/auth/authSlice";
-import { logoutUser } from "../../services/authService";  
+import Card from "../../components/card/Card";  
 import { BACKEND_URL } from "../../services/authService";
 import '../Home/Home.css';
 import './Contact.css';
+import Header from "Header/Header";
+import Footer from "components/footer/Footer";
 
 const Contact = () => {
   const [subject, setSubject] = useState("");
@@ -19,14 +17,8 @@ const Contact = () => {
     subject,
     message,
   };
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    await logoutUser();
-    dispatch(setLogout());
-    navigate("/login");
-  };
+
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -42,24 +34,7 @@ const Contact = () => {
 
   return (
     <>
-      <nav className="home-header">
-        <div className="container home-header-content">
-          <div className="home-logo">
-            <Link to="/home">Salon<span>System</span></Link>
-          </div>
-          <ul className="home-nav">
-            <li><Link to="/Services">Service</Link></li>
-            <li><Link to="/createBooking">Booking</Link></li>
-            <li><Link to="/az">Vacancy</Link></li>
-            <li><Link to="/contact-us">Contact</Link></li>
-          <li>
-              <button onClick={handleLogout} className="hero-btn" style={{marginLeft: '1rem'}}>
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Header />
       <div className="contactWrapper">
         <h2 className="contactTitle">Contact Us</h2>
         <div className="contactSection">
@@ -92,15 +67,16 @@ const Contact = () => {
               <h3>Our Contact Information</h3>
               <p>Fill the form or contact us via other channels listed below</p>
               <div className="icons">
-                <span><FaPhoneAlt /><p>071-563200023</p></span>
-                <span><FaEnvelope /><p>suwanisalon@gmail.com</p></span>
+                <span><FaPhoneAlt /><p>+91 8347774574</p></span>
+                <span><FaEnvelope /><p>salon@gmail.com</p></span>
                 <span><GoLocation /><p>Colombo</p></span>
-                <span><FaTwitter /><p>@SalonSuwani</p></span>
+                <span><FaTwitter /><p>@Salon</p></span>
               </div>
             </Card>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

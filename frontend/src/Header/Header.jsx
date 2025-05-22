@@ -1,50 +1,48 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { ShowOnLogin, ShowOnLogout } from "../components/protect/HiddenLink";
-import { selectUser, setLogout } from "../redux/features/auth/authSlice";
+import { setLogout } from "../redux/features/auth/authSlice";
 import { logoutUser } from "../services/authService";
 import "./Header.scss";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector(selectUser);
 
-  const logout = async () => {
+  const handleLogout = async () => {
     await logoutUser();
     dispatch(setLogout());
     navigate("/login");
   };
 
   return (
-    <header className="header-minimal">
-      <div className="header-container">
-        <div className="header-logo">
-          <Link to="/" className="header-logo-link">Salon<span>360</span></Link>
-        </div>
-        <nav className={`header-nav${menuOpen ? " open" : ""}`}>
-          <ul className="header-nav-list">
-            <ShowOnLogout>
-              <li><Link to="/register" className="header-link">Register</Link></li>
-              <li><Link to="/login" className="header-link">Login</Link></li>
-            </ShowOnLogout>
-            <ShowOnLogin>
-              <li><Link to="/home" className="header-link">Home</Link></li>
-              <li><Link to="/dashboard" className="header-link">Dashboard</Link></li>
-              <li><button className="header-btn-logout" onClick={logout}>Logout</button></li>
-              <li className="header-user">{user?.name}</li>
-            </ShowOnLogin>
+      <nav className="home-header">
+        <div className="container home-header-content">
+          <div className="home-logo">
+            <Link to="/home">Salon<span>System</span></Link>
+          </div>
+          <ul className="home-nav">
+            <li><Link to="/Services">Service</Link></li>
+            <li><Link to="/createBooking">Booking</Link></li>
+            <li><Link to="/az">Vacancy</Link></li>
+            <li><Link to="/contact-us">Contact</Link></li>
+            <li>
+              <button
+                onClick={() => navigate('/profile')}
+                className="hero-btn"
+                style={{marginLeft: '1rem'}}
+                title="Profile"
+              >
+                <span role="img" aria-label="Profile" style={{ fontSize: '1.2rem', verticalAlign: 'middle' }}>👤</span>
+              </button>
+            </li>
+            <li>
+              <button onClick={handleLogout} className="hero-btn" style={{marginLeft: '1rem'}}>
+                Logout
+              </button>
+            </li>
           </ul>
-        </nav>
-        <button className="header-hamburger" onClick={() => setMenuOpen(m => !m)} aria-label="Toggle menu">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </button>
-      </div>
-    </header>
+        </div>
+      </nav>
   );
 };
 

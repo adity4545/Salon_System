@@ -31,6 +31,8 @@ import OrderDetails from "./pages/Booking/Orderdetails/orderdetails";
 import UpdateOrder from "./pages/Booking/Updateorder/UpdateOrders";
 import Contact from "./pages/contact/Contact";
 import Home from "./pages/Home/Home";
+import EditProfile from "./pages/profile/EditProfile";
+import Profile from "./pages/profile/Profile";
 import ServiceAdd from "./pages/ServiceAdd/ServiceAdd";
 import ServicesAll from "./pages/ServiceAll/ServicesAll";
 import Services from "./pages/Services/Services";
@@ -183,6 +185,8 @@ function App() {
             <Navigate to="/login" />
           )}
         />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/edit" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   );

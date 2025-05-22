@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { registerUser, validateEmail } from "../../services/authService";
@@ -12,9 +12,8 @@ const initialState = {
 };
 
 const Register = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
   const [formData, setformData] = useState(initialState);
   const { name, email, password, password2 } = formData;
   const [showPassword, setShowPassword] = useState(false);
@@ -49,20 +48,16 @@ const Register = () => {
       password,
     };
 
-    setIsLoading(true);
-
     try {
       const data = await registerUser(userData);
       if (!data) {
         toast.error("You are already a registered user. Please login.");
-        setIsLoading(false);
         return;
       }
       toast.success("Registration successful! Please login.");
       navigate("/login");
-      setIsLoading(false);
     } catch (error) {
-      setIsLoading(false);
+      // Handle error
     }
   };
 
@@ -93,7 +88,7 @@ const Register = () => {
             <Link to="/login">Login</Link>
           </div>
         </form>
-        <div className="testimonial">“Glamour Salon is my go-to for every occasion. – Loved by 1000+ clients.”</div>
+        <div className="testimonial">“Salon System is my go-to for every occasion. – Loved by 1000+ clients.”</div>
       </div>
     </div>
   );

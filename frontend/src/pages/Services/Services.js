@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from 'react-router-dom';
-import { setLogout } from "../../redux/features/auth/authSlice";
-import { logoutUser } from "../../services/authService";
 import './Services.css';
+import Header from 'Header/Header';
+import Footer from 'components/footer/Footer';
 
 function ServiceCard({ service }) {
   return (
@@ -20,8 +18,6 @@ function ServiceCard({ service }) {
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   useEffect(() => {
     const fetchServices = async () => {
       try {
@@ -35,32 +31,9 @@ const Services = () => {
     fetchServices();
   }, []);
 
-  const handleLogout = async () => {
-    await logoutUser();
-    dispatch(setLogout());
-    navigate("/login");
-  };
-
   return (
     <>
-    <nav className="home-header">
-    <div className="container home-header-content">
-      <div className="home-logo">
-        <Link to="/home">Salon<span>System</span></Link>
-      </div>
-      <ul className="home-nav">
-        <li><Link to="/Service">Service</Link></li>
-        <li><Link to="/createBooking">Booking</Link></li>
-        <li><Link to="/az">Vacancy</Link></li>
-        <li><Link to="/contact-us">Contact</Link></li>
-        <li>
-          <button onClick={handleLogout} className="hero-btn" style={{marginLeft: '1rem'}}>
-            Logout
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <Header />
     <div className="servicesContainer">
       <h2 className="servicesTitle">Our Salon Services</h2>
       <div className="services-list">
@@ -69,6 +42,7 @@ const Services = () => {
         ))}
       </div>
     </div>
+    <Footer />
     </>
   );
 };

@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Card from "../../components/card/Card";
 import ChangePassword from "../../components/changePassword/ChangePassword";
 import Loader from "../../components/loader/Loder";
-import { selectUser } from "../../redux/features/auth/authSlice";
-import { updateUser } from "../../services/authService";
-import "./Profile.scss";
+import { selectUser, setLogin } from "../../redux/features/auth/authSlice";
+// import { updateUser } from "../../services/authService";
+import "./Profile.css";
 
 const EditProfile = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const user = useSelector(selectUser);
   const { email } = user;
@@ -27,6 +28,7 @@ const EditProfile = () => {
     phone: user?.phone,
     bio: user?.bio,
     photo: user?.photo,
+    category: user?.category,
   };
   const [profile, setProfile] = useState(initialState);
   const [profileImage, setProfileImage] = useState("");
@@ -74,11 +76,14 @@ const EditProfile = () => {
         phone: profile.phone,
         bio: profile.bio,
         photo: imageURL,
+        category: profile.category,
       };
 
-      const response = await updateUser(formData);
-      console.log(response);
+      // const response = await updateUser(formData);
       toast.success("User updated");
+      // Update Redux and localStorage with new user data
+      dispatch(setLogin({ user: { ...user, ...formData }, token: localStorage.getItem('token') }));
+      localStorage.setItem('user', JSON.stringify({ ...user, ...formData }));
       navigate("/profile");
     } catch (error) {
       console.error("Error saving profile:", error);
@@ -124,7 +129,7 @@ const EditProfile = () => {
                 style={{ fontWeight: "bold" }}
               />
             </p>
-            <p>
+            {/* <p>
               <label style={{ fontWeight: "Bold" }}>Bio:</label>
               <textarea
                 name="bio"
@@ -136,11 +141,24 @@ const EditProfile = () => {
               ></textarea>
             </p>
             <p>
+              <label style={{ fontWeight: "Bold" }}>Category:</label>
+              <input
+                type="text"
+                name="category"
+                value={profile?.category}
+                onChange={handleInputChange}
+                style={{ fontWeight: "bold" }}
+              />
+            </p> */}
+            <p>
               <label style={{ fontWeight: "Bold" }}>Photo:</label>
               <input type="file" name="image" onChange={handleImageChange} />
             </p>
             <div>
               <button className="--btn --btn-success">Update Profile</button>
+            </div>
+            <div>
+              <button className="--btn --btn-success" onClick={() => navigate('/profile')}>Back</button>
             </div>
           </span>
         </form>

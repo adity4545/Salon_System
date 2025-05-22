@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
-import { setLogout } from "../../redux/features/auth/authSlice";
-import { logoutUser } from "../../services/authService";
+// import { setLogout } from "../../redux/features/auth/authSlice";
+// import { logoutUser } from "../../services/authService";
+import Header from 'Header/Header';
 import './Home.css';
 
 function ServiceCard({ service }) {
@@ -20,7 +21,7 @@ function ServiceCard({ service }) {
 }
 
 const Home = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [services, setServices] = useState([]);
@@ -37,32 +38,9 @@ const Home = () => {
     fetchServices();
   }, []);
 
-  const handleLogout = async () => {
-    await logoutUser();
-    dispatch(setLogout());
-    navigate("/login");
-  };
-
   return (
     <div className="home home-modern">
-      <nav className="home-header">
-        <div className="container home-header-content">
-          <div className="home-logo">
-            <Link to="/home">Salon<span>System</span></Link>
-          </div>
-          <ul className="home-nav">
-            <li><Link to="/Services">Service</Link></li>
-            <li><Link to="/createBooking">Booking</Link></li>
-            <li><Link to="/az">Vacancy</Link></li>
-            <li><Link to="/contact-us">Contact</Link></li>
-            <li>
-              <button onClick={handleLogout} className="hero-btn" style={{marginLeft: '1rem'}}>
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Header />
       <div className="about-section">
         <h2 className="about-title">About Our Salon</h2>
         <p className="about-description">
@@ -70,7 +48,7 @@ const Home = () => {
         </p>
       </div>
       <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          <button className="view-all-btn" onClick={() => navigate('/createBooking')}>Book Now</button>
+          <button className="view-all-btn" onClick={() => navigate('/createBooking')}>Book Your Appointment Now</button>
       </div>
       <div className="services-section">
         <h2 className="services-title">Our Popular Services</h2>

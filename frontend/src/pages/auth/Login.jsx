@@ -33,7 +33,7 @@ const Login = () => {
       <div className="register-card">
         <div className="lux-logo gold-accent">💇‍♀️</div>
         <h2 className="login-title">Login</h2>
-        <div className="tagline">Welcome back to Glamour Salon. Enter your details to continue.</div>
+        <div className="tagline">Welcome back to Salon System. Enter your details to continue.</div>
         <form className="login-form" onSubmit={handleLogin}>
           <input type="email" className="login-input" value={email} onChange={e => setEmail(e.target.value)} autoComplete="email" required placeholder="Email" />
           <div style={{ position: 'relative', width: '100%' }}>
