@@ -1,35 +1,82 @@
 .profileWrapper {
-  max-width: 650px;
+  max-width: 500px;
   margin: 48px auto;
   padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profileCard {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
-  padding: 36px 32px;
+  padding: 36px 32px 28px 32px;
   margin: 0 auto;
   text-align: center;
   border: 1.5px solid #e0aaff;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #b983ff;
+  margin: 0 auto 18px auto;
+  display: block;
+  background: #f3eaff;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+  font-size: 1.1rem;
+}
+
+.profile-details p {
+  margin: 0;
+  color: #4b3269;
 }
 
 .title {
   color: #b983ff;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   font-size: 2.2rem;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
-.description {
-  color: #6d4c9c;
-  font-size: 1.25rem;
-  font-weight: 500;
+.edit-btn {
+  background: linear-gradient(90deg, #b983ff 60%, #00bfae 100%);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 1rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(185, 131, 255, 0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s, color 0.2s;
+  margin-top: 1.5rem;
+}
+.edit-btn:hover {
+  background: linear-gradient(90deg, #00bfae 0%, #b983ff 100%);
+  color: #ffd700;
+  transform: translateY(-2px) scale(1.04);
 }
 
 @media (max-width: 600px) {
   .profileCard {
     padding: 18px 6px;
+  }
+  .profileWrapper {
+    padding: 0 6px;
   }
 } 

@@ -10,8 +10,6 @@ const Footer = () => {
       </footer>
       <div className="footer-content">
         <h3>Our Contact Information
-        <p>Fill the form or contact us via other channels listed below</p>
-        </h3>
         <div
           className="icons"
           style={{ display: "flex", gap: "10px", flexDirection: "column" }}
@@ -33,6 +31,11 @@ const Footer = () => {
             <p>@Salon</p>
           </span>
         </div>
+        </h3>
+        <p className="footer-about-description" style={{ marginTop: "18px" }}>
+          <h5>our details:</h5><br/>
+          Salon System is your all-in-one platform for effortless salon management and a seamless client experience. Book appointments, explore services, and connect with top stylists—all in one place. Discover beauty, relaxation, and convenience with Salon System.
+        </p>
       </div>
     </>
   );

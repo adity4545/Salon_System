@@ -7,10 +7,13 @@ import './Profile.css';
 const Profile = () => {
   const user = useSelector(selectUser);
   const navigate = useNavigate();
+  const avatar = user?.photo || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user?.name || 'User');
+
 
   return (
     <div className="profileWrapper">
       <Card cardClass="profileCard">
+      <img src={avatar} alt="Profile" className="profile-avatar" />
         <h2 className="title">User Profile</h2>
         <div style={{textAlign: 'left', margin: '0 auto', maxWidth: 400}}>
           <p><strong>Name:</strong> {user?.name || '-'}</p>
