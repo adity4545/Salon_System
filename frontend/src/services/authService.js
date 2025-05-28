@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = "http://localhost:5000";
 
 export const validateEmail = (email) => {
   return email.match(
@@ -126,9 +126,16 @@ export const getUser = async () => {
 // Update Profile
 export const updateUser = async (formData) => {
   try {
+    const token = localStorage.getItem('token');
     const response = await axios.patch(
       `${BACKEND_URL}/api/users/updateuser`,
-      formData
+      formData,
+      {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
     return response.data;
   } catch (error) {

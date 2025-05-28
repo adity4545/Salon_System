@@ -9,7 +9,6 @@ const Profile = () => {
   const navigate = useNavigate();
   const avatar = user?.photo || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user?.name || 'User');
 
-
   return (
     <div className="profileWrapper">
       <Card cardClass="profileCard">

@@ -9,7 +9,7 @@ import AddVacancy from "./components/admin job vacancy/AddVacancy";
 import AllApplicationadmin from "./components/All job applications/AllApplicationadmin";
 import AddOTSalary from "./components/employee salary/Add OT Salary/AddOTSalary";
 import AddSpecialSalary from "./components/employee salary/all OT Salary/addSpecailLeaveSalary";
-import EmployeeSalaryDetails from "./components/employee salary/all OT Salary/employeeDeatails";
+// import EmployeeSalaryDetails from "./components/employee salary/all OT Salary/employeeDeatails";
 import Update from "./components/employee salary/all OT Salary/UpdateDetailes";
 import UpdateOT from "./components/employee salary/all OT Salary/updateOT";
 import UpdateSpecial from "./components/employee salary/all OT Salary/updateSpecial";
@@ -73,7 +73,6 @@ function App() {
           <Route path='/updateSpecial/:id' element={<UpdateSpecial />}/>
           <Route path ='/getSpecial/:id' element={<SpecialSalaryView />}/>
           <Route path='/updateSalary/:id' element={<Update />} />
-          <Route path='/get/:id' element={<EmployeeSalaryDetails />}/>
           <Route path='/updateOt/:id' element={<UpdateOT />}/>
           <Route path='/az' element={<Vacanciesdisplay />}/>
           <Route path='/app' element={<Application />}/>

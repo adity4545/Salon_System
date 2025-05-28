@@ -87,6 +87,7 @@ function OrderDetails() {
                                 <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Service</th>
                                 <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Date</th>
                                 <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Description</th>
+                                <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Payment Method</th>
                                 <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Action</th>
                             </tr>
                         </thead>
@@ -99,6 +100,7 @@ function OrderDetails() {
                                     <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.service}</td>
                                     <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.date}</td>
                                     <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.message}</td>
+                                    <td style={{ border: '1px solid #ddd', padding: '8px' }}>{e1.paymentMethod || '-'}</td>
                                     <td style={{ border: '1px solid #ddd', padding: '8px' }}>
                                         <a href={`/updateorder/${e1._id}`} className="action-btn edit-btn">Edit Order</a>
                                         <button onClick={() => handledelete(e1._id)} className="action-btn delete-btn">Delete Order</button>

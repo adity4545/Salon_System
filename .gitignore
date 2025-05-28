@@ -1,2 +1,5 @@
 frontend/.env
 backend/.env
+# Ignore Excel temp/lock files and contact submissions Excel file
+backend/~$*.xlsx
+backend/contact_submissions.xlsx

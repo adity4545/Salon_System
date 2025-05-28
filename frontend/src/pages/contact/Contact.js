@@ -1,14 +1,15 @@
 import axios from "axios";
+import Footer from "components/footer/Footer";
 import { useState } from "react";
 import { FaEnvelope, FaPhoneAlt, FaTwitter } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { toast } from "react-toastify";
-import Card from "../../components/card/Card";  
-import { BACKEND_URL } from "../../services/authService";
+import Card from "../../components/card/Card";
+import Header from '../../Header/Header';
 import '../Home/Home.css';
 import './Contact.css';
-import Header from "Header/Header";
-import Footer from "components/footer/Footer";
+
+const BACKEND_URL = "http://localhost:5000";
 
 const Contact = () => {
   const [subject, setSubject] = useState("");
@@ -18,12 +19,20 @@ const Contact = () => {
     message,
   };
 
-
-
   const sendEmail = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/contactus`, data);
+      const token = localStorage.getItem('token');
+      const response = await axios.post(
+        `${BACKEND_URL}/api/contactus`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
+      );
       setSubject("");
       setMessage("");
       toast.success(response.data.message);

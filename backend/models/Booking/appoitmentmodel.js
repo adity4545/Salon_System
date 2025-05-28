@@ -7,6 +7,7 @@ const orderschema=mongoose.Schema({
     service:String,
     date:String,
     message:String,
+    paymentMethod: { type: String, default: 'Pay at Store' },
 }, {
     timestamps:true
 

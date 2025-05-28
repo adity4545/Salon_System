@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 // import { setLogout } from "../../redux/features/auth/authSlice";
 // import { logoutUser } from "../../services/authService";
-import Header from 'Header/Header';
+import Header from '../../Header/Header';
 import './Home.css';
 
 function ServiceCard({ service }) {

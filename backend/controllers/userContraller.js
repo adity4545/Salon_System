@@ -104,6 +104,17 @@ const loginUser = asyncHandler(async (req, res) => {
       sameSite: "lax",
       secure: false,
     });
+    // Send login notification email
+    try {
+      const subject = "Login Notification";
+      const message = `<h2>Hello ${user.name || user.email}</h2><p>You have successfully logged in to your account on the Salon Management System.</p><p>If this wasn't you, please reset your password immediately.</p><p>Regards,<br/>Salon Management Team</p>`;
+      const send_to = user.email;
+      const sent_from = process.env.EMAIL_USER;
+      await sendEmail(subject, message, send_to, sent_from, sent_from);
+    } catch (err) {
+      console.error("Failed to send login notification email:", err);
+      // Do not block login if email fails
+    }
   }
 
   if (user && passwordIsCorrect) {
@@ -138,7 +149,7 @@ const logOut = asyncHandler(async (req, res) => {
 
 // Get User Data
 const getUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id);
+  const user = await User.findById(req.user.id);
 
   if (user) {
     const { _id, name, email, photo, phone, bio, role } = user;
@@ -173,7 +184,7 @@ const LoginStatus = asyncHandler(async (req, res) => {
 
 //------------------------------ Update User------------------------
 const updateUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id);
+  const user = await User.findById(req.user.id);
 
   if (user) {
     const { name, email, photo, phone, bio } = user;
@@ -202,7 +213,7 @@ const updateUser = asyncHandler(async (req, res) => {
 // ---------------Change Password------------------------
 
 const changePassword = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id);
+  const user = await User.findById(req.user.id);
 
   const { oldPassword, password } = req.body;
 

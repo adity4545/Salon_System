@@ -3,9 +3,19 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const paypalRoutes = require('./routes/paypal');
 const app = express();
+
+// CORS Configuration - must be at the very top
+app.use(cors({
+  origin: ["http://localhost:3000", "http://localhost:3001"],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+app.options('*', cors());
 
 // Middlewares
 app.use(express.json());
@@ -16,7 +26,6 @@ app.use(bodyParser.json());
 // Now add PayPal routes after body parsers
 app.use('/api', paypalRoutes);
 
-const cors = require("cors");
 const userRoute = require("./routes/userRoute");
 const contactRoute = require("./routes/contactRoute");
 const salaryroutes=require("./routes/job vacancy routes/applicattionroutes.js");
@@ -28,15 +37,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const passport = require('./config/passport');
 const serviceRouter = require("./routes/serviceRouter");
-
-// CORS Configuration
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
-console.log('CORS middleware enabled for origins: http://localhost:3000, http://localhost:3001');
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -142,5 +142,3 @@ const connectDB = async () => {
 };
 
 connectDB();
-
-app.options('*', cors());

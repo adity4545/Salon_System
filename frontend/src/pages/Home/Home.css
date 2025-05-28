@@ -123,11 +123,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 600px) {
-  .services-list {
-    grid-template-columns: 1fr;
-  }
-}
 
 .services-title {
   font-size: 2.5rem;
@@ -172,4 +167,37 @@
   color: #4b3269;
   line-height: 1.7;
   font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+}
+
+@media (max-width: 500px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+  .about-section {
+    max-width: 90vw;
+    padding: 1.2rem 0.7rem;
+    border-radius: 0.7rem;
+    margin: 1.2rem auto;
+  }
+  .about-title {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+  .about-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 0.2rem;
+  }
+  .services-section {
+    padding: 1.5rem 0 2rem 0;
+  }
+  .service-card {
+    padding: 1.5rem 1rem;
+    border-radius: 0.7rem;
+    font-size: 0.98rem;
+  }
+  .services-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
 } 

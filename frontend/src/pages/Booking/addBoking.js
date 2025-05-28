@@ -1,12 +1,12 @@
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import axios from "axios";
 import Footer from 'components/footer/Footer';
-import Header from 'Header/Header';
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Card from '../../components/card/Card';
 import PaymentComponent from '../../components/PaymentComponent/PaymentComponent';
+import Header from '../../Header/Header';
 import '../Home/Home.css';
 import './AddBooking.css';
 
@@ -28,6 +28,8 @@ function AddBooking() {
 
   const [services, setServices] = useState([]);
   const [paymentAmount, setPaymentAmount] = useState('100.00');
+
+  const [confirmed, setConfirmed] = useState(false);
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -93,7 +95,7 @@ function AddBooking() {
       const price = selectedService && typeof selectedService.s_price === 'number' ? selectedService.s_price : '100.00';
       setPaymentAmount(price);
       setShowPayment(true);
-      await axios.post("http://localhost:5000/create", Booking);
+      await axios.post("http://localhost:5000/create", { ...Booking, paymentMethod: confirmed ? 'Pay at Store' : 'PayPal' });
     } catch (error) {
       alert("Failed to book!");
     }
@@ -142,10 +144,10 @@ function AddBooking() {
               <div className="paymentSection">
                 <h3>Proceed to Payment</h3>
                 <div style={{ margin: '18px 0', textAlign: 'center' }}>
-                  <PayAtStoreButton />
+                  <PayAtStoreButton confirmed={confirmed} setConfirmed={setConfirmed} />
                 </div>
-                <PaymentComponent amount={paymentAmount} currency="USD" />
-                {!window.paypal && <div style={{color: 'red', marginTop: '12px'}}>PayPal failed to load. Please check your network or client ID.</div>}
+                {!confirmed && <PaymentComponent amount={paymentAmount} currency="USD" />}
+                {!window.paypal && !confirmed && <div style={{color: 'red', marginTop: '12px'}}>PayPal failed to load. Please check your network or client ID.</div>}
               </div>
             </PayPalScriptProvider>
           </Card>
@@ -157,8 +159,7 @@ function AddBooking() {
   );
 }
 
-function PayAtStoreButton() {
-  const [confirmed, setConfirmed] = useState(false);
+function PayAtStoreButton({ confirmed, setConfirmed }) {
   if (confirmed) {
     return <div style={{ color: 'green', fontWeight: 600, marginTop: 12 }}>You have chosen to pay at the store. Please pay at the counter on your visit!</div>;
   }

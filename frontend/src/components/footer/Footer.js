@@ -32,10 +32,12 @@ const Footer = () => {
           </span>
         </div>
         </h3>
-        <p className="footer-about-description" style={{ marginTop: "18px" }}>
-          <h5>our details:</h5><br/>
-          Salon System is your all-in-one platform for effortless salon management and a seamless client experience. Book appointments, explore services, and connect with top stylists—all in one place. Discover beauty, relaxation, and convenience with Salon System.
-        </p>
+        <div className="footer-about-description" style={{ marginTop: "18px" }}>
+          <h5>our details:</h5>
+          <p>
+            Salon System is your all-in-one platform for effortless salon management and a seamless client experience. Book appointments, explore services, and connect with top stylists—all in one place. Discover beauty, relaxation, and convenience with Salon System.
+          </p>
+        </div>
       </div>
     </>
   );

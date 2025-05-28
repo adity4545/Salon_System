@@ -4,8 +4,8 @@ import '../../pages/Home/Home.css';
 import './Vacanciesdisplay.css'; // Updated CSS file name
 
 import axios from 'axios';
-import Header from 'Header/Header';
 import Footer from 'components/footer/Footer';
+import Header from '../../Header/Header';
 
 const Vacanciesdisplay = () => {
   const [data, setData] = useState([]);

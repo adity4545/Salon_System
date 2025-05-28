@@ -6,7 +6,7 @@ import Card from "../../components/card/Card";
 import ChangePassword from "../../components/changePassword/ChangePassword";
 import Loader from "../../components/loader/Loder";
 import { selectUser, setLogin } from "../../redux/features/auth/authSlice";
-// import { updateUser } from "../../services/authService";
+import { updateUser } from "../../services/authService";
 import "./Profile.css";
 
 const EditProfile = () => {
@@ -23,12 +23,12 @@ const EditProfile = () => {
   }, [email, navigate]);
 
   const initialState = {
-    name: user?.name,
-    email: user?.email,
-    phone: user?.phone,
-    bio: user?.bio,
-    photo: user?.photo,
-    category: user?.category,
+    name: user?.name || "",
+    email: user?.email || "",
+    phone: user?.phone || "",
+    bio: user?.bio || "",
+    photo: user?.photo || "",
+    category: user?.category || "",
   };
   const [profile, setProfile] = useState(initialState);
   const [profileImage, setProfileImage] = useState("");
@@ -48,8 +48,9 @@ const EditProfile = () => {
 
     try {
       // Phone number validation
-      if (profile.phone.length !== 10) {
-        toast.error("Phone number must be 10 digits.");
+      const e164Pattern = /^\+?[1-9]\d{9,14}$/;
+      if (!e164Pattern.test(profile.phone)) {
+        toast.error("Phone number must be in E.164 format, e.g. +1234567890");
         setIsLoading(false);
         return;
       }
@@ -79,12 +80,13 @@ const EditProfile = () => {
         category: profile.category,
       };
 
-      // const response = await updateUser(formData);
-      toast.success("User updated");
-      // Update Redux and localStorage with new user data
-      dispatch(setLogin({ user: { ...user, ...formData }, token: localStorage.getItem('token') }));
-      localStorage.setItem('user', JSON.stringify({ ...user, ...formData }));
-      navigate("/profile");
+      const response = await updateUser(formData);
+      if (response) {
+        toast.success("User updated");
+        dispatch(setLogin({ user: { ...user, ...response }, token: localStorage.getItem('token') }));
+        localStorage.setItem('user', JSON.stringify({ ...user, ...response }));
+        navigate("/profile");
+      }
     } catch (error) {
       console.error("Error saving profile:", error);
       toast.error("Failed to update profile. Please try again.");
@@ -122,7 +124,7 @@ const EditProfile = () => {
             <p>
               <label style={{ fontWeight: "Bold" }}>Phone:</label>
               <input
-                type="Number"
+                type="text"
                 name="phone"
                 value={profile?.phone}
                 onChange={handleInputChange}

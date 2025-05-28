@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import './Services.css';
-import Header from 'Header/Header';
 import Footer from 'components/footer/Footer';
+import { useEffect, useState } from 'react';
+import Header from '../../Header/Header';
+import './Services.css';
 
 function ServiceCard({ service }) {
   return (
