@@ -39,6 +39,7 @@ const Sidebar = ({ children }) => {
           </button>
         </div>
       </aside>
+      {isOpen && <div className="sidebar-overlay" onClick={toggle}></div>}
       <main className={`main-content${isOpen ? " sidebar-open" : ""}`}>{children}</main>
     </div>
   );

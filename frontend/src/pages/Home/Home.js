@@ -14,8 +14,8 @@ function ServiceCard({ service }) {
       <p>{service.s_desc}</p>
       <div className="service-meta">
         <span>Duration: {service.s_duration}</span>
-        <span>Price: {Number(service.s_price).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</span>
       </div>
+        <span>Price: {Number(service.s_price).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</span>
     </div>
   );
 }

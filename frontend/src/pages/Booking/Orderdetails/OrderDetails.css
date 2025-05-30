@@ -1,4 +1,4 @@
-.showorders {
+/* .showorders {
   max-width: 1100px;
   margin: 0 auto;
   margin-top: 10%;
@@ -73,10 +73,10 @@
 .no-top-space {
   margin-top: 0 !important;
   padding-top: 0 !important;
-}
+}*/
 
 /* Remove any top margin or padding from main containers */
-.special-table-container,
+/* .special-table-container,
 .no-top-space,
 .orderDetailsWrapper,
 .showorders {
@@ -95,7 +95,7 @@ body, #root, .layout, .main-content {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
-}
+} */
 
 .order-details-main {
   margin: 0 !important;
@@ -117,6 +117,7 @@ body, #root, .layout, .main-content {
   box-shadow: 0 4px 24px rgba(185, 131, 255, 0.10);
   border-radius: 12px;
   overflow: hidden;
+  left:100px;
   margin-top: 16px;
 }
 

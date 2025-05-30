@@ -94,10 +94,11 @@ function App() {
             />
             <Route
               path="/seradd"
-              element={ user?.role === "admin" ? (
-                <Sidebar>
-                  <ServiceAdd />
-                </Sidebar>
+              element={
+                user?.role === "admin" ? (
+                  <Sidebar>
+                    <ServiceAdd />
+                  </Sidebar>
                 ) : (
                   <Navigate to="/login" />
                 )
@@ -176,13 +177,15 @@ function App() {
         />
         <Route
           path="/serall"
-          element={user?.role === "admin" ? (
-            <Sidebar>
-              <ServicesAll />
-            </Sidebar>
-          ) : (
-            <Navigate to="/login" />
-          )}
+          element={
+            user?.role === "admin" ? (
+              <Sidebar>
+                <ServicesAll />
+              </Sidebar>
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<EditProfile />} />

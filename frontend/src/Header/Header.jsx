@@ -32,6 +32,7 @@ const Header = () => {
         </button>
         <div className={`header-nav${menuOpen ? " open" : ""}`}>
           <ul className="header-nav-list">
+          <li><Link className="header-link" to="/Home " onClick={() => setMenuOpen(false)}>Home</Link></li>
             <li><Link className="header-link" to="/Services" onClick={() => setMenuOpen(false)}>Service</Link></li>
             <li><Link className="header-link" to="/createBooking" onClick={() => setMenuOpen(false)}>Booking</Link></li>
             <li><Link className="header-link" to="/az" onClick={() => setMenuOpen(false)}>Vacancy</Link></li>

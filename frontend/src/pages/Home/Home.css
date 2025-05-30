@@ -104,7 +104,7 @@
 .services-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0 3rem 0;
+  padding: 2rem 2rem 3rem 2rem;
 }
 
 .services-list {
@@ -150,7 +150,7 @@
 .about-section {
   max-width: 900px;
   margin: 2.5rem auto 2.5rem auto;
-  background: linear-gradient(90deg, #f3eaff 60%, #e0aaff 100%);
+  background: linear-gradient(50deg, #f3eaff 20%, #c46ff5 100%);
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px 0 #c9a4e633;
   padding: 2.5rem 2rem;
@@ -159,7 +159,7 @@
 .about-title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #a259e6;
+  color: #7c3aed;
   margin-bottom: 1rem;
 }
 .about-description {
@@ -189,7 +189,7 @@
     padding: 0 0.2rem;
   }
   .services-section {
-    padding: 1.5rem 0 2rem 0;
+    padding: 1.5rem 0.5rem 2rem 0.5rem;
   }
   .service-card {
     padding: 1.5rem 1rem;

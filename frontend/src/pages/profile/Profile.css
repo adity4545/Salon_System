@@ -14,7 +14,9 @@
   padding: 36px 32px 28px 32px;
   margin: 0 auto;
   text-align: center;
-  border: 1.5px solid #e0aaff;
+  border: 2.5px solid;
+  border-image: linear-gradient(90deg, #b983ff 60%, #00bfae 100%);
+  /* border-image-slice: 1; */
   width: 100%;
   max-width: 420px;
   position: relative;
@@ -53,7 +55,7 @@
   letter-spacing: 0.01em;
 }
 
-.edit-btn {
+.hero-btn {
   background: linear-gradient(90deg, #b983ff 60%, #00bfae 100%);
   color: #fff;
   border: none;
@@ -66,10 +68,33 @@
   transition: background 0.2s, box-shadow 0.2s, transform 0.1s, color 0.2s;
   margin-top: 1.5rem;
 }
-.edit-btn:hover {
+.hero-btn:hover {
   background: linear-gradient(90deg, #00bfae 0%, #b983ff 100%);
   color: #ffd700;
   transform: translateY(-2px) scale(1.04);
+}
+
+.profile-gradient-bg {
+  background: linear-gradient(135deg, #f6e6ff 0%, #e0c3fc 100%);
+  min-height: 20vh;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.fade-in {
+  animation: fadeInProfile 1s ease;
+}
+
+@keyframes fadeInProfile {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.avatar-glow {
+  transition: box-shadow 0.3s;
+}
+.avatar-glow:hover {
+  box-shadow: 0 0 0 6px #e0aaff, 0 0 16px 4px #b983ff99;
 }
 
 @media (max-width: 600px) {

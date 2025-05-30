@@ -78,7 +78,8 @@ function OrderDetails() {
                         No order details found.
                     </div>
                 ) : (
-                    <table className="special-table" style={{ width: '100%', borderCollapse: 'collapse', marginTop: '0' }}>
+                    <div className="order-details-table-container">
+                      <table className="special-table">
                         <thead>
                             <tr className="special-table-header">
                                 <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>Name</th>
@@ -108,7 +109,8 @@ function OrderDetails() {
                                 </tr>
                             ))}
                         </tbody>
-                    </table>
+                      </table>
+                    </div>
                 )}
             </div>
             <button onClick={generatePDF} style={{ padding: '10px 20px', fontSize: '16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px', backgroundColor: 'green', color: 'white', border: 'none' }}>Download Report</button>
